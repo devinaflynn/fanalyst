@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+ <div class="container2">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>Devin's Team</h4>
+
+<%= image_tag @team.image.url %>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @team.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>
+    </div>
+  </div>  
+</div> 
