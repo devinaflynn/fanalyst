@@ -17,6 +17,8 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 
 gem 'devise'
 
+gem "font-awesome-rails"
+
 gem 'bootstrap-sass'
 
 # Use jquery as the JavaScript library
