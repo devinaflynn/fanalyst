@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :teams
-
+  resources :teams do
+    resource :result
+  end
 
   root 'pages#home'
-
   get 'home' => 'pages#home'
 
   # Example of regular route:
