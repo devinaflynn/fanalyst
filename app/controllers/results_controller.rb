@@ -7,19 +7,12 @@ class ResultsController < ApplicationController
   def create
     @team = current_user.teams.find(params[:team_id])
 
-    @result = Result.new(result_params)
-    @result.team = @team
-
     # TODO: it would be interesting to have a background worker checking once a while if this results are correct
     respond_to do |format|
-      if @result.save
-        @current_user.avarage_sum_score+= @result.score
-        @current_user.avarage_count_score+= 1
-        @current_user.avarage_score = @current_user.avarage_sum_score / @current_user.avarage_count_score
-        @current_user.save
-
+      if @team.create_or_update_result(result_params)
         format.html { redirect_to @team, notice: 'Result was successfully created.' }
       else
+        @result = @team.result
         format.html { render :new }
       end
     end
@@ -32,18 +25,12 @@ class ResultsController < ApplicationController
 
   def update
     @team = current_user.teams.find(params[:team_id])
-    @result = @team.result
-
-    previous_score = @result.score
 
     respond_to do |format|
-      if @result.update(result_params)
-        @current_user.avarage_sum_score+= (@result.score - previous_score)
-        @current_user.avarage_score = @current_user.avarage_sum_score / @current_user.avarage_count_score
-        @current_user.save
-
+      if @team.create_or_update_result(result_params)
         format.html { redirect_to @team, notice: 'Result was successfully updated.' }
       else
+        @result = @team.result
         format.html { render :edit }
       end
     end
