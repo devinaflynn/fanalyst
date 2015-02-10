@@ -1,4 +1,5 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
+<<<<<<< HEAD
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -16,6 +17,25 @@
         <li><%= link_to "Upload Team", new_team_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Log out [#{current_user.avarage_score.round(1)}]", destroy_user_session_path, method: :delete   %></li>
+=======
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         <%= link_to image_tag("http://i.imgur.com/YAF0Inj.png", size: "50x50"), root_path, class: "navbar-brand", style: "margin-left: 5px; padding-top:0px;" %>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Leaderboard</a></li>
+              <li><%= link_to "Teams", teams_path %></li>
+            <li><%= link_to "Upload Team", new_team_path %></li>
+            <% if user_signed_in? %>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+>>>>>>> d675c0ade4fa0aca2d68549de97a5c5037e7d0f4
         <% else %>
           <li><%= link_to "Sign in", new_user_session_path %></li>
         <% end %>
