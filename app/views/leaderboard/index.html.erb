@@ -1,16 +1,26 @@
+
+
+<div class="container2">
+
+<h>Available Users</h>
 <table class="table">
   <thead>
     <tr>
       <th></th>
       <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-  <% @users.each do |user| -%>
+  <% @users.each_with_index do |user, index| -%>
     <tr>
+      <td><%= index + 1 %></td>
       <td><%= user.email %></td>
       <td><%= user.avarage_score %></td>
+      <td><%= link_to 'view', user_detail_path(user) %></td>
     </tr>
   <% end -%>
   </tbody>
 </table>
+</div>

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resource :result
   end
 
+  get 'user/:id' => 'user#index', as: 'user_detail'
+
   root 'pages#home'
   get 'home' => 'pages#home'
   get 'leaderboard' => 'leaderboard#index'

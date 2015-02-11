@@ -13,11 +13,11 @@ User.create([
 ])
 
 u = User.last
-u.teams << Team.new(notes: 'Team 1')
-u.teams << Team.new(notes: 'Team 2')
-u.teams << Team.new(notes: 'Team 3')
+u.teams << Team.new(notes: 'Team 1', image: File.open("#{Rails.root}/public/tmp/team.png"))
+u.teams << Team.new(notes: 'Team 2', image: File.open("#{Rails.root}/public/tmp/team.png"))
+u.teams << Team.new(notes: 'Team 3', image: File.open("#{Rails.root}/public/tmp/team.png"))
 a = 10
 u.teams.each do |team|
-  team.create_or_update_result({notes: 'Result for team 1', score: a})
+  team.create_or_update_result({notes: 'Result for team 1', score: a, image: File.open("#{Rails.root}/public/tmp/result.png")})
   a+=5
 end
