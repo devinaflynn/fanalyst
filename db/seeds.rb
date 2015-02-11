@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create([
-  {email: 'test@test.com', password: 'abcd1234', password_confirmation: 'abcd1234'},
-  {email: 'test2@test.com', password: 'abcd1234', password_confirmation: 'abcd1234'},
-  {email: 'test3@test.com', password: 'abcd1234', password_confirmation: 'abcd1234'},
-  {email: 'test4@test.com', password: 'abcd1234', password_confirmation: 'abcd1234'}
+  {email: 'test@test.com', password: 'abcd1234', password_confirmation: 'abcd1234', username: 'user 1', price: 5},
+  {email: 'test2@test.com', password: 'abcd1234', password_confirmation: 'abcd1234', username: 'user 2', price: 10},
+  {email: 'test3@test.com', password: 'abcd1234', password_confirmation: 'abcd1234', username: 'user 3', price: 15},
+  {email: 'test4@test.com', password: 'abcd1234', password_confirmation: 'abcd1234', username: 'user 4', price: 20}
 ])
 
 u = User.last

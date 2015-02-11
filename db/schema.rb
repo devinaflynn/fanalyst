@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209200640) do
+ActiveRecord::Schema.define(version: 20150211120842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "payments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "allowed_user_id"
+    t.decimal  "value"
+    t.datetime "expires_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "payments", ["allowed_user_id"], name: "index_payments_on_allowed_user_id", using: :btree
+  add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
 
   create_table "results", force: :cascade do |t|
     t.text     "notes"
@@ -32,7 +44,6 @@ ActiveRecord::Schema.define(version: 20150209200640) do
 
   create_table "teams", force: :cascade do |t|
     t.text     "notes"
-    t.decimal  "score"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -55,6 +66,8 @@ ActiveRecord::Schema.define(version: 20150209200640) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.decimal  "price",                  default: 0.0
+    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "avarage_sum_score",      default: 0.0
