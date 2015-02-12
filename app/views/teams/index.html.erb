@@ -4,7 +4,6 @@
 
 <h1>Listing Teams</h1>
 
-</div>
 
 <table>
   <thead>
@@ -20,7 +19,6 @@
       <tr>
         <td><%= image_tag team.image.url(:thumb) %></td>
         <td><%= team.notes %></td>
-        <td><%= team.score %></td>
         <td><%= team.user.email if team.user %></td>
         <td><%= link_to 'View Team', team , class: "btn btn-primary" %></td>
         <td><%= link_to 'Edit', edit_team_result_path(team) %></td>
@@ -32,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Team', new_team_path %>
+<%= link_to 'New Team', new_team_path, class: "btn btn-danger" %>
+
+</div>
