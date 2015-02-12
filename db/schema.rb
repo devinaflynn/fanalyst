@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211120842) do
+ActiveRecord::Schema.define(version: 20150127014554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,18 +44,24 @@ ActiveRecord::Schema.define(version: 20150211120842) do
 
   create_table "teams", force: :cascade do |t|
     t.text     "notes"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "teams", ["user_id"], name: "index_teams_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
+    t.decimal  "price",                  default: 0.0
+    t.string   "username"
+    t.string   "stripe_customer_id"
+    t.decimal  "avarage_sum_score",      default: 0.0
+    t.integer  "avarage_count_score",    default: 0
+    t.decimal  "avarage_score",          default: 0.0
     t.string   "email",                  default: "",  null: false
     t.string   "encrypted_password",     default: "",  null: false
     t.string   "reset_password_token"
@@ -66,13 +72,8 @@ ActiveRecord::Schema.define(version: 20150211120842) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.decimal  "price",                  default: 0.0
-    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "avarage_sum_score",      default: 0.0
-    t.integer  "avarage_count_score",    default: 0
-    t.decimal  "avarage_score",          default: 0.0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

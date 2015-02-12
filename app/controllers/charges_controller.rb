@@ -14,19 +14,27 @@ class ChargesController < ApplicationController
 
     amount = (params[:price].to_f.round(2)*100).to_i
 
+    byebug
     begin
-      customer = Stripe::Customer.create(
-          :email => 'current_user.email',
-          :card  => params[:stripeToken]
-      )
+      if current_user.stripe_customer_id
+        customer = Stripe::Customer.retrieve(current_user.stripe_customer_id)
+      else
+        # creates a new customer
+        customer = Stripe::Customer.create(
+            :email => current_user.email,
+            :card  => params[:stripeToken]
+        )
+        current_user.stripe_customer_id = customer.id
+      end
 
       charge = Stripe::Charge.create(
           :customer    => customer.id,
           :amount      => amount,
-          :description => 'customer', # TODO: provide the user that I am paying to see
+          :description => "Allows '#{@subcription_user.username}' access for 12h.",
           :currency    => 'usd'
       )
     rescue Stripe::CardError => e
+      current_user.save
       flash[:error] = e.message
       return redirect_to user_detail_path(@subcription_user)
     end
@@ -35,6 +43,7 @@ class ChargesController < ApplicationController
         allowed_user_id: @subcription_user.id,
         value: params[:price],
         expires_at: Time.zone.now + 12.hours)
+    current_user.save
 
     redirect_to user_detail_path(@subcription_user), notice: 'Payment processed'
   end
