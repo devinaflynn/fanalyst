@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   resources :teams do
     resource :result
   end
+  resources :charges
 
   get 'user/:id' => 'user#index', as: 'user_detail'
 
   root 'pages#home'
   get 'home' => 'pages#home'
   get 'leaderboard' => 'leaderboard#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

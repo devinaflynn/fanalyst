@@ -21,3 +21,6 @@ config/database.yml
 
 #paperclip
 public/system/*
+
+# Ignore application configuration
+/config/application.yml

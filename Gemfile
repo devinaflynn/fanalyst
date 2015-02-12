@@ -51,3 +51,8 @@ group :development, :test do
   gem 'spring'
 end
 
+# app specific
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+gem 'figaro', group: [:development, :test]
+
