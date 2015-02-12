@@ -1,6 +1,5 @@
 class ChargesController < ApplicationController
   def create
-    byebug
     # Amount in cents
     @subcription_user = User.find(params[:subcription_user_id])
     if @subcription_user.price != params[:price].to_f
@@ -24,7 +23,7 @@ class ChargesController < ApplicationController
       charge = Stripe::Charge.create(
           :customer    => customer.id,
           :amount      => amount,
-          :description => 'customer',
+          :description => 'customer', # TODO: provide the user that I am paying to see
           :currency    => 'usd'
       )
     rescue Stripe::CardError => e
