@@ -4,14 +4,16 @@
   <table class="table">
     <thead>
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Rank</th>
+        <th>Username</th>
+        <th>AVG Score</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
     <% @users.each_with_index do |user, index| -%>
+
+  
       <tr>
         <td><%= index + 1 %></td>
         <td><%= user.email %></td>

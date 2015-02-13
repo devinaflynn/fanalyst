@@ -21,6 +21,8 @@
 
   <div class="row">
     <h1>User <%= @user.email %></h1>
+    <h3>Rank: 4</h3>
+    <h4>Avg. Score: 289</h4>
   </div>
 
   <div class="row">
@@ -42,6 +44,7 @@
             <%= hidden_field_tag :price, @user.price %>
 
             <article>
+             <h4>4 lineups</h4>
               <label class="amount">
                 <span>Amount: <%= number_to_currency(@user.price.round(2)) %></span>
               </label>
@@ -54,19 +57,22 @@
           <% end %>
 
         <% end %>
+
+        <img src="http://i.imgur.com/dQjUvAn.png">
+       
         </div>
       </div>
     </div>
     <div class="col-xs-6">
-      <ul>
+     
         <% @results.each do |result| -%>
-        <li>
+      
           <%= result.score %><br>
           <%= image_tag result.image %><br>
           <%= result.notes %>
-        </li>
+     
         <% end %>
-      </ul>
+     
     </div>
   </div>
 </div>
