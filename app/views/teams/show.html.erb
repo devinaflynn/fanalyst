@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
-<div class="container3">
+
   <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
+    <div class="panel panel-default2">
       <div class="panel-heading">
         <h4>Devin's Team</h4>
 
@@ -12,9 +12,9 @@
           <%= @team.notes %>
         </p>
 
-        <%= link_to 'Edit', edit_team_path(@team) %> |
-        <%= link_to 'Back', teams_path %>
+        <%= link_to 'Edit', edit_team_path(@team), class: "btn btn-danger" %> |
+        <%= link_to 'Back', teams_path, class: "btn btn-danger" %>
       </div>
     </div>
   </div>
-</div>
+

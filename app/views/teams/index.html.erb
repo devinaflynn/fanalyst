@@ -21,8 +21,8 @@
         <td><%= team.notes %></td>
         <td><%= team.user.email if team.user %></td>
         <td><%= link_to 'View Team', team , class: "btn btn-primary" %></td>
-        <td><%= link_to 'Edit', edit_team_result_path(team) %></td>
-        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_team_result_path(team), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,6 +30,6 @@
 
 <br>
 
-<%= link_to 'New Team', new_team_path, class: "btn btn-danger" %>
+<%= link_to 'New Team', new_team_path, class: "btn btn-success" %>
 
 </div>
