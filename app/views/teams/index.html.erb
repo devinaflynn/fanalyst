@@ -21,6 +21,7 @@
         <td><%= team.notes %></td>
         <td><%= team.user.email if team.user %></td>
         <td><%= link_to 'View Team', team , class: "btn btn-primary" %></td>
+        <td><%= link_to 'Add Results', team , class: "btn btn-info" %></td>
         <td><%= link_to 'Edit', edit_team_path(team), class: "btn btn-warning" %></td>
         <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
