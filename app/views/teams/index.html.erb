@@ -8,8 +8,8 @@
 <table>
   <thead>
     <tr>
-      <th>Notes</th>
-      <th>Score</th>
+      <th></th>
+      <th></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,8 +17,8 @@
   <tbody>
     <% @teams.each do |team| %>
       <tr>
-        <td><%= image_tag team.image.url(:thumb) %></td>
-        <td><%= team.notes %></td>
+        <td><%= image_tag team.image.url(:medium) %></td>
+        <td><%= team.created_at %></td>
         <td><%= team.user.email if team.user %></td>
         <td><%= link_to 'View Team', team , class: "btn btn-primary btn btn-sm", style: "margin-right:5px; margin-left:10px;" %></td>
         <td><%= link_to 'Add Results', team , class: "btn btn-success btn btn-sm", style: "margin-right:5px;"%></td>
