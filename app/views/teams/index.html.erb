@@ -21,7 +21,13 @@
         <td><%= team.created_at %></td>
         <td><%= team.user.email if team.user %></td>
         <td><%= link_to 'View Team', team , class: "btn btn-primary btn btn-sm", style: "margin-right:5px; margin-left:10px;" %></td>
-        <td><%= link_to 'Add Results', team , class: "btn btn-success btn btn-sm", style: "margin-right:5px;"%></td>
+        <td>
+
+          <%= link_to team.result.nil? ? 'Add Results' : 'Edit Results',
+                      team.result.nil? ? new_team_result_path(team) : edit_team_result_path(team),
+                      class: "btn btn-success btn btn-sm", style: "margin-right:5px;"%>
+
+        </td>
         <td><%= link_to '', edit_team_path(team), class: "btn btn-primary btn btn-sm fa fa-edit", style: "margin-right:5px;" %></td>
         <td><%= link_to '', team, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn btn-sm fa fa-trash", style: "margin-right:5px;" %></td>
       </tr>
