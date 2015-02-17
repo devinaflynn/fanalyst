@@ -53,6 +53,7 @@ class InitialModel < ActiveRecord::Migration
     create_table :teams do |t|
       t.text :notes
       t.attachment :image
+      t.string :event
 
       t.references :user, index: true
 
