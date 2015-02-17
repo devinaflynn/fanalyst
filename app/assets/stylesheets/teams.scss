@@ -5,17 +5,27 @@
 
 .container2 {
 
-margin-top: 85px;
+margin-top: 95px;
 padding-top: 40px;
 padding-bottom: 40px;
+padding-left: 40px;
+padding-right: 40px;
  
   background-color: #ffffff;
   
-  opacity:0.9;
+  opacity:1.0;
   
 }
 
 .panel-default2 {
   
-  margin-top: 40px;
+  margin-top: 80px;
+}
+
+td {
+  font-size: 180%;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color:      #FAF5E6;
 }

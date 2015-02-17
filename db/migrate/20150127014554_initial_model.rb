@@ -9,6 +9,8 @@ class InitialModel < ActiveRecord::Migration
       t.integer :avarage_count_score, default: 0
       t.decimal :avarage_score, default: 0
 
+      t.attachment :profile_image
+
       #
       # Devise
       #

@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150127014554) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "event"
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -56,18 +57,22 @@ ActiveRecord::Schema.define(version: 20150127014554) do
   add_index "teams", ["user_id"], name: "index_teams_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.decimal  "price",                  default: 0.0
+    t.decimal  "price",                      default: 0.0
     t.string   "username"
     t.string   "stripe_customer_id"
-    t.decimal  "avarage_sum_score",      default: 0.0
-    t.integer  "avarage_count_score",    default: 0
-    t.decimal  "avarage_score",          default: 0.0
-    t.string   "email",                  default: "",  null: false
-    t.string   "encrypted_password",     default: "",  null: false
+    t.decimal  "avarage_sum_score",          default: 0.0
+    t.integer  "avarage_count_score",        default: 0
+    t.decimal  "avarage_score",              default: 0.0
+    t.string   "profile_image_file_name"
+    t.string   "profile_image_content_type"
+    t.integer  "profile_image_file_size"
+    t.datetime "profile_image_updated_at"
+    t.string   "email",                      default: "",  null: false
+    t.string   "encrypted_password",         default: "",  null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,   null: false
+    t.integer  "sign_in_count",              default: 0,   null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"

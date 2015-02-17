@@ -1,12 +1,13 @@
+
 <div class="container2">
   <h1>Daily Fantasy Sports NBA Leaderboard</h1>
    <h4>Learn from and follow the best DFS managers</h4>
-  <table class="table">
+  <table class="table table-striped table table-responsive">
     <thead>
       <tr>
-        <th>Rank</th>
-        <th>Username</th>
-        <th>AVG Score</th>
+        <th></th>
+        <th></th>
+        <th></th>
         <th></th>
       </tr>
     </thead>
@@ -16,9 +17,10 @@
   
       <tr>
         <td><%= index + 1 %></td>
+        <td><img src="http://i.imgur.com/vDrI3xq.png"></td>
         <td><%= user.email %></td>
         <td><%= user.avarage_score %></td>
-        <td><%= link_to 'view', user_detail_path(user), class: "btn btn-primary" %></td>
+        <td><%= link_to '', user_detail_path(user), class: "btn btn-success fa fa-bars" %></td>
       </tr>
     <% end -%>
     </tbody>

@@ -19,7 +19,7 @@
     </div>
   <% end %>
 
-  <div class="row">
+  <div class="panel panel-default">
     <h1>User <%= @user.email %></h1>
     <h3>Rank: 4</h3>
     <h4>Avg. Score: 289</h4>
@@ -64,12 +64,16 @@
       </div>
     </div>
     <div class="col-xs-6">
+    <h2>Previous Lineups</h2>
      
         <% @results.each do |result| -%>
+
       
           <%= result.score %><br>
           <%= image_tag result.image %><br>
           <%= result.notes %>
+
+       
      
         <% end %>
      
