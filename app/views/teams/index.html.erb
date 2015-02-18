@@ -18,6 +18,7 @@
     <% @teams.each do |team| %>
       <tr>
         <td><%= image_tag team.image.url(:medium) %></td>
+        <td><%= image_tag team.result.image.url(:medium) if !team.result.nil? %></td>
         <td><%= team.created_at %></td>
         <td><%= team.user.email if team.user %></td>
         <td><%= link_to 'View Team', team , class: "btn btn-primary btn btn-sm", style: "margin-right:5px; margin-left:10px;" %></td>
