@@ -13,8 +13,6 @@
     </thead>
     <tbody>
     <% @users.each_with_index do |user, index| -%>
-
-  
       <tr>
         <td><%= index + 1 %></td>
         <td><img src="<%= user.profile_image.url %>"></td>

@@ -19,6 +19,11 @@
       <div class="form-group">
         <%= f.label :image %>
         <%= f.file_field :image, class: "form-control" %>
+        <% if @result.image.exists? %>
+          <img id="file" src="<%= @result.image.url %>">
+        <% else %>
+          <img id="file" src="#" alt="team image" style="display: none">
+        <% end %>
       </div>
       <div class="form-group">
         <%= f.label :score %><br>

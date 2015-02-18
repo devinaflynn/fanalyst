@@ -20,6 +20,11 @@
     <div class="form-group">
       <%= f.label :image %>
       <%= f.file_field :image, class: "form-control" %>
+      <% if @team.image.exists? %>
+        <img id="file" src="<%= @team.image.url %>">
+      <% else %>
+        <img id="file" src="#" alt="team image" style="display: none">
+      <% end %>
     </div>
 
     <div class="form-group">
