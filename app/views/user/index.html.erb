@@ -34,7 +34,7 @@
           <ul>
             <% @teams.each do |team| -%>
               <li>
-                <%= image_tag team.image %><br>
+                <%= image_tag team.image (:thumb)  %><br>
                 <%= team.notes %>
               </li>
             <% end %>

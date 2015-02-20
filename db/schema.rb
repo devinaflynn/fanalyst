@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150127014554) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "payments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "allowed_user_id"
@@ -25,8 +22,8 @@ ActiveRecord::Schema.define(version: 20150127014554) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "payments", ["allowed_user_id"], name: "index_payments_on_allowed_user_id", using: :btree
-  add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
+  add_index "payments", ["allowed_user_id"], name: "index_payments_on_allowed_user_id"
+  add_index "payments", ["user_id"], name: "index_payments_on_user_id"
 
   create_table "results", force: :cascade do |t|
     t.text     "notes"
@@ -40,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150127014554) do
     t.datetime "updated_at",         null: false
   end
 
-  add_index "results", ["team_id"], name: "index_results_on_team_id", unique: true, using: :btree
+  add_index "results", ["team_id"], name: "index_results_on_team_id", unique: true
 
   create_table "teams", force: :cascade do |t|
     t.text     "notes"
@@ -54,7 +51,7 @@ ActiveRecord::Schema.define(version: 20150127014554) do
     t.datetime "updated_at",         null: false
   end
 
-  add_index "teams", ["user_id"], name: "index_teams_on_user_id", using: :btree
+  add_index "teams", ["user_id"], name: "index_teams_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.decimal  "price",                      default: 0.0
@@ -81,7 +78,7 @@ ActiveRecord::Schema.define(version: 20150127014554) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
