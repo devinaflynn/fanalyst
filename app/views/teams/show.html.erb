@@ -9,9 +9,19 @@
 
         <div class="alert alert-success " >
           <strong>Notes:</strong>
-          <%= @team.notes %>
-        </div>  
+          <%= simple_format(@team.notes) %>
+        </div>
 
+        <% if @team.result.image.exists? %>
+        <%= image_tag @team.result.image.url %>
+
+        <div class="alert alert-success " >
+          <strong>Notes:</strong>
+          <%= simple_format(@team.result.notes) %>
+          <strong>Score:</strong>
+          <%= @team.result.score %>
+        </div>
+        <% end %>
 
         <%= link_to 'Edit', edit_team_path(@team), class: "btn btn-danger" %> |
         <%= link_to 'Back', teams_path, class: "btn btn-danger" %>
