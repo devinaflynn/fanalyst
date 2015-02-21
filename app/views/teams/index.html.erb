@@ -1,43 +1,43 @@
+
+<div class="container3">
+<h1>My Lineups</h1>
 <p id="notice"><%= notice %></p>
 
-<div class="container2">
-
-<h1>My Teams</h1>
-
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @teams.each do |team| %>
-      <tr>
-        <td><%= image_tag team.image.url(:medium) %></td>
-        <td><%= image_tag team.result.image.url(:medium) if !team.result.nil? %></td>
-        <td><%= team.created_at %></td>
-        <td><%= team.user.email if team.user %></td>
-        <td><%= link_to 'View Team', team , class: "btn btn-primary btn btn-sm", style: "margin-right:5px; margin-left:10px;" %></td>
-        <td>
 
-          <%= link_to team.result.nil? ? 'Add Results' : 'Edit Results',
+
+     <div class="col-md-6">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <%= link_to 'View Team', team , class: "btn btn-primary btn btn-sm", style: "margin-right:5px; margin-left:10px;" %>
+        <%= link_to '', edit_team_path(team), class: "btn btn-warning btn btn-sm fa fa-edit", style: "margin-right:5px;" %>
+       <%= link_to '', team, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn btn-sm fa fa-trash", style: "margin-right:5px;" %>
+         
+       </div>
+     
+        <%= image_tag team.image.url(:medium) %>
+      </div> 
+      </div>
+     
+       <div class="col-md-6">  
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= link_to team.result.nil? ? 'Add Results' : 'Edit Results',
                       team.result.nil? ? new_team_result_path(team) : edit_team_result_path(team),
-                      class: "btn btn-success btn btn-sm", style: "margin-right:5px;"%>
+                      class: "btn btn-danger btn btn-sm", style: "margin-right:5px;"%></div>
+        <%= image_tag team.result.image.url(:medium) if !team.result.nil? %>
+     </div> 
+     </div>
+     </div>
+  
 
-        </td>
-        <td><%= link_to '', edit_team_path(team), class: "btn btn-primary btn btn-sm fa fa-edit", style: "margin-right:5px;" %></td>
-        <td><%= link_to '', team, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn btn-sm fa fa-trash", style: "margin-right:5px;" %></td>
-      </tr>
+      
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    
 
-<%= link_to 'New Team', new_team_path, class: "btn btn-success" %>
 
-</div>
+
+
+
+
