@@ -12,7 +12,7 @@
           <%= simple_format(@team.notes) %>
         </div>
 
-        <% if @team.result.image.exists? %>
+        <% if @team.result && @team.result.image.exists? %>
         <%= image_tag @team.result.image.url %>
 
         <div class="alert alert-success " >
