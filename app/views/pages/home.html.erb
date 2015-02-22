@@ -1,48 +1,333 @@
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-    
 
 
 
-        
-      
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 
+    <script src="js/modernizr.custom.js"></script>
+  </head>
 
+  <body>
 
- <!-- Main jumbotron for a primary marketing message or call to action -->
-  
-      <div class="container2">
-        <h1>Welcome to Fanalyst</h1>
-        <h4>Learn who and why to pick every night from the best daily fantasy players.</h4>
-        <p><a class="btn btn-danger" href="/leaderboard" role="button">View Leaderboard &raquo;</a></p>
-      
-  
-  
-
-
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h4>1. Upload Team</h4>
-        <h1> <i class="fa fa-users fa-3x"></i><h1>
-
-         
-          
+    <div class="preloader">
+       <div class="spinner">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
         </div>
-        <div class="col-md-4">
-          <h4>2. Gain Followers</h3>
-           <h1> <i class="fa fa-bar-chart-o fa-3x"></i><h4>
-         
-       </div>
-        <div class="col-md-4">
-          <h4>3. Earn Cash</h4>
-           <h1> <i class="fa fa-diamond fa-3x"></i><h1>
-          
-       
+    </div>
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper cbp-af-header">
+      <div class="container">
+
+        <!-- Fixed navbar -->
+        <div class="navbar cbp-af-inner" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <h1><a class="navbar-brand scroll" href="#intro">Fanalyst</a></h1>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav pull-right">
+                <li><a href="#about">About</a></li>
+                <li><a href="#featured1">Features</a></li>
+                <li class="hidden-sm"><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a class="hidden-sm login" href="#">Login</a></li>
+                <li><a class="signup" href="#">Sign up</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
-      
+    </div>
+
+    <!-- Hero Banner
+    ================================================== -->
+    <div id="intro-video" style="background-image: url( 'img/bg-videofallback.jpg' ); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=dum1Gh-FE9Q',containment:'#intro-video',autoPlay:true, mute:true, startAt:0, printUrl:false,showControls:false, opacity:1, quality: 'highres'}"></a>
+        <div class="item">
+          <div class="container">
+            <div class="row">
+              <div class="carousel-caption-center colour-white">
+                <h2>Playing is easy</h2>
+                <h1>Winning is hard.</h1>
+                <p>That's where we come in! Learn from and follow the best daily fantasy players</p>
+                <p><a class="btn btn-lg btn-primary scroll" href="/leaderboard" role="button">View Leaderboard</a></p>
+              </div>
+            </div>
+          </div>
+         <div class="overlay-bg"></div>
+        </div>
+    </div>
 
 
-      
+
+    <!-- About Section
+    ================================================== -->
+    <section id="about" class="content text-center light">
+
+      <div class="container">
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-12 overlay-text">
+            <h2>We always deliver more than expected</h2>
+          </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-sm-4 text-center overlay-text icons">
+            <div class="icon-wrapper">
+              <i class="fa fa-cloud icon-large"></i>
+            </div>
+            <h3>Sky's the limit</h3>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+          </div>
+          <div class="col-sm-4 text-center overlay-text icons">
+            <div class="icon-wrapper">
+              <i class="fa fa-rocket icon-large"></i>
+            </div>
+            <h3>Big Ideas</h3>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+          </div>
+          <div class="col-sm-4 text-center overlay-text icons">
+            <div class="icon-wrapper">
+              <i class="fa fa-lightbulb-o icon-large"></i>
+            </div>
+            <h3>Creative Execution</h3>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+          </div>
+        </div><!-- /.row -->
+      </div>
+
+      <div class="overlay-bg light"></div>
+
+    </section>
+
+
+   
+
+
+    <!-- Team
+    ================================================== -->
+    <section id="team" class="dark">
+
+      <div class="page-header text-center">
+        <h3>Our Team</h3>
+        <h2>Our talented team</h2>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="owl-example" class="owl-carousel">
+              <div class="item">
+                <img class="display-pic" src="img/user-avatar4.jpg" alt="Team Member">
+                  <h3>David Parrelli</h3>
+                  <h4>Product Manager</h4>
+                  <p>Insatiable appetite for all things digital. Product guy. Founder of <a href="https://twitter.com/workingnomads" target="blank">@workingnomads</a>. Footballer and diehard Manchester United fan</p>
+                  <a class="icon" href="http://www.twitter.com/dparrelli" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a class="icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                  <a class="icon" href="http://www.linkedin.com/pub/david-parrelli/17/b22/a11" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  <a class="icon" href="http://dribbble.com/dparrelli" target="_blank"><i class="fa fa-dribbble"></i></a>
+              </div>
+              <div class="item">
+                <img class="display-pic" src="img/user-avatar5.jpg" alt="Team Member">
+                  <h3>Pete Burg</h3>
+                  <h4>UI Designer</h4>
+                  <p>Maecenas eu placerat ante. Fusce ut neque justo, et aliquet enim. In hac habitasse platea dictumst. Nullam commodo neque erat.</p>
+                  <a class="icon" href="http://www.twitter.com/dparrelli" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a class="icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                  <a class="icon" href="http://www.linkedin.com/pub/david-parrelli/17/b22/a11" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  <a class="icon" href="http://dribbble.com/dparrelli" target="_blank"><i class="fa fa-dribbble"></i></a>
+              </div>
+              <div class="item">
+                <img class="display-pic" src="img/user-avatar6.jpg" alt="Team Member">
+                  <h3>John Hilton</h3>
+                  <h4>Senior Developer</h4>
+                  <p>Maecenas eu placerat ante. Fusce ut neque justo, et aliquet enim. In hac habitasse platea dictumst. Nullam commodo neque erat.</p>
+                  <a class="icon" href="http://www.twitter.com/dparrelli" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a class="icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                  <a class="icon" href="http://www.linkedin.com/pub/david-parrelli/17/b22/a11" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  <a class="icon" href="http://dribbble.com/dparrelli" target="_blank"><i class="fa fa-dribbble"></i></a>
+              </div>
+              <div class="item">
+                <img class="display-pic" src="img/user-avatar1.jpg" alt="Team Member">
+                  <h3>Sarah Miller</h3>
+                  <h4>Creative Director</h4>
+                  <p>Maecenas eu placerat ante. Fusce ut neque justo, et aliquet enim. In hac habitasse platea dictumst. Nullam commodo neque erat.</p>
+                  <a class="icon" href="http://www.twitter.com/dparrelli" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a class="icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                  <a class="icon" href="http://www.linkedin.com/pub/david-parrelli/17/b22/a11" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  <a class="icon" href="http://dribbble.com/dparrelli" target="_blank"><i class="fa fa-dribbble"></i></a>
+              </div>
+              <div class="item">
+                <img class="display-pic" src="img/user-avatar2.jpg" alt="Team Member">
+                  <h3>Tracy Wheeler</h3>
+                  <h4>Developer</h4>
+                  <p>Maecenas eu placerat ante. Fusce ut neque justo, et aliquet enim. In hac habitasse platea dictumst. Nullam commodo neque erat.</p>
+                  <a class="icon" href="http://www.twitter.com/dparrelli" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a class="icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                  <a class="icon" href="http://www.linkedin.com/pub/david-parrelli/17/b22/a11" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  <a class="icon" href="http://dribbble.com/dparrelli" target="_blank"><i class="fa fa-dribbble"></i></a>
+              </div>
+              <div class="item">
+                <img class="display-pic" src="img/user-avatar3.jpg" alt="Team Member">
+                  <h3>Adrian Filloti</h3>
+                  <h4>Account Manager</h4>
+                  <p>Maecenas eu placerat ante. Fusce ut neque justo, et aliquet enim. In hac habitasse platea dictumst. Nullam commodo neque erat.</p>
+                  <a class="icon" href="http://www.twitter.com/dparrelli" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a class="icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                  <a class="icon" href="http://www.linkedin.com/pub/david-parrelli/17/b22/a11" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  <a class="icon" href="http://dribbble.com/dparrelli" target="_blank"><i class="fa fa-dribbble"></i></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Call to Action
+    ================================================== -->
+    <section class="cta text-center">
+
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Have a great idea? <span class="highlight">Let us help!</span></h2>
+            <p><button class="btn contact-button" type="button" role="button">Contact us</button></p>
+            <div class='contact-form'>
+              <form name="sentMessage" id="contactForm"  novalidate>
+                <div class='name'>
+                  <input class='form-control first' placeholder='First Name' type='text' id="first_name" autofocus required data-validation-required-message="Please enter your first name">
+                  <input class='last' placeholder='Last Name' type='text' id="last_name" required data-validation-required-message="Please enter your last name">
+                </div>
+                <div class='contact'>
+                  <input class='form-control email' placeholder='E-mail Address' type='text' id="email" required data-validation-required-message="Please enter your email">
+                </div>
+                <div class='message'>
+                  <textarea class="form-control" placeholder='Your message' id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                </div>
+                <div id="success"> </div> <!-- For success/fail messages -->
+                <footer class="submit-button">
+                  <button type="submit">Send your message</button>
+                </footer>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Footer
+    ================================================== -->
+    <footer id="contact" class="footer">
+
+      <div class="container">    
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-sm-3 col-md-3">
+              <div class="footer-logo">
+                <h2>Prestige</h2>
+                <p>1024 Main Street, Vancouver BC<br>+1 (123) 456-7890</p>
+                <br>
+                <p class="muted">© 2013 Prestige Inc.</p>
+                <a href="#">Terms of Service</a>    
+                <a href="#">Privacy</a>
+              </div>
+            </div>
+            <div class="col-sm-3 col-md-3">
+              <h3>Product</h3>
+              <ul class="list-unstyled">
+                <li><a href="#">Product for iOS</a></li>
+                <li><a href="#">Product for Android</a></li>
+                <li><a href="#">Product for Windows</a></li>           
+              </ul>
+            </div>
+            <div class="col-sm-3 col-md-3">
+              <h3>Company</h3>
+              <ul class="list-unstyled">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Jobs&emsp;<span class="label label-info">We're hiring!</span></a></li>           
+              </ul>
+            </div>
+            <div class="col-sm-3 col-md-3">
+              <h3>Documentation</h3>
+              <ul class="list-unstyled">
+                <li><a href="#">Product Help</a></li>
+                <li><a href="#">Developer API</a></li>
+                <li><a href="#">Product Markdown</a></li>             
+              </ul>
+            </div>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <a class="icon" href="http://www.twitter.com/dparrelli" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a class="icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a class="icon" href="http://www.dribbble.com/dparrelli" target="_blank"><i class="fa fa-dribbble"></i></a>
+            <a class="icon" href="http://www.workingnomads.co" target="_blank"><i class="fa fa-globe"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+ 
+  
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.min.js"></script>
+    <script src="js/jquery.mb.YTPlayer.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/scrollReveal.js"></script>
+    <script src="js/isotope.min.js" defer="defer"></script>
+    <script src="js/imagesloaded.pkgd.min.js" defer="defer"></script>
+    <script src="js/jquery.scrollTo.js" defer="defer"></script>
+    <script src="js/jquery.nav.js" defer="defer"></script>
+    <script src="js/jquery.magnific-popup.min.js" defer="defer"></script>
+    <script src="js/jqBootstrapValidation.js" defer="defer"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+
+      $(document).ready(function(){
+        $(".player").mb_YTPlayer();
+        isotope();
+      });
+
+    </script>
+
+  </body>
+</html>
