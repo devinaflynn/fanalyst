@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :payments
   has_many :results
 
-  has_attached_file :profile_image, :styles => { :medium => "300x300>", :thumb => "150x150>" }
+  has_attached_file :profile_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :profile_image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   # returns true if the current user payed to have access to the user profile

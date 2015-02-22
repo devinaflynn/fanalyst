@@ -1,6 +1,20 @@
 body {
   background: #f6f6f6;
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+html { 
+width: 100%;
+padding: 0;
+margin: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
 }
 .no-padding {
   padding: 0 !important;
