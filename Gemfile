@@ -5,7 +5,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -14,13 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'paperclip', github: 'thoughtbot/paperclip'
-
-gem 'devise'
-
-gem "font-awesome-rails"
-
-gem 'bootstrap-sass'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -52,7 +44,11 @@ group :development, :test do
 end
 
 # app specific
+gem 'pg'
+gem 'devise'
+gem 'font-awesome-rails'
+gem 'bootstrap-sass'
+gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'devise'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-
 gem 'figaro', group: [:development, :test]
-

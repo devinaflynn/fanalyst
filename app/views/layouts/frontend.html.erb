@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if IE 10]> <html class="ie10" lang="en"> <![endif]-->
+<!--[if (gt IE 10)|!(IE)]> <html lang="en"> <![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="<%= image_path('frontend/favicon.png') %>">
+
+  <title>Prestige | Home</title>
+
+
+
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+
+  <%= stylesheet_link_tag    'frontend', media: 'all' %>
+
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+<div class="preloader">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+</div>
+
+<!-- NAVBAR
+================================================== -->
+<div class="navbar-wrapper cbp-af-header">
+  <div class="container">
+
+    <!-- Fixed navbar -->
+    <div class="navbar cbp-af-inner" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h1><a class="navbar-brand scroll" href="#intro">Prestige</a></h1>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="#about">About</a></li>
+            <li><a href="#featured1">Features</a></li>
+            <li class="hidden-sm"><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a class="hidden-sm login" href="#">Login</a></li>
+            <li><a class="signup" href="#">Sign up</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%= yield %>
+
+<!-- Footer
+================================================== -->
+<footer id="contact" class="footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="col-sm-3 col-md-3">
+          <div class="footer-logo">
+            <h2>Prestige</h2>
+            <p>1024 Main Street, Vancouver BC<br>+1 (123) 456-7890</p>
+            <br>
+            <p class="muted">© 2013 Prestige Inc.</p>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-3">
+          <h3>Product</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Product for iOS</a></li>
+            <li><a href="#">Product for Android</a></li>
+            <li><a href="#">Product for Windows</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3 col-md-3">
+          <h3>Company</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Jobs&emsp;<span class="label label-info">We're hiring!</span></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3 col-md-3">
+          <h3>Documentation</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Product Help</a></li>
+            <li><a href="#">Developer API</a></li>
+            <li><a href="#">Product Markdown</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="icon" href="http://www.twitter.com/dparrelli" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a class="icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a class="icon" href="http://www.dribbble.com/dparrelli" target="_blank"><i class="fa fa-dribbble"></i></a>
+        <a class="icon" href="http://www.workingnomads.co" target="_blank"><i class="fa fa-globe"></i></a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<div id="login" class="overlay overlay-content">
+
+  <button type="button" class="overlay-close">Close</button>
+  <section class="login-part">
+    <p class="login-overlay">
+      Log In
+    </p>
+    <form method="post">
+      <input class="form-control" type="email" name="u" placeholder="Email" required="required" />
+      <input class="form-control" type="password" name="p" placeholder="Password" required="required" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">Log me in</button>
+      <a href="#" class="forgot-pw">Forgot password? We can help!</a>
+    </form>
+  </section>
+
+</div>
+
+<div id="signup" class="overlay overlay-content">
+
+  <button type="button" class="overlay-close">Close</button>
+  <section class="login-part">
+    <p class="login-overlay">
+      Sign up to Prestige
+    </p>
+    <form method="post">
+      <input class="form-control" type="text" name="email" placeholder="Email" required="required" />
+      <input class="form-control" type="password" name="pw" placeholder="Password" required="required" />
+      <input class="form-control" type="password" name="repeat-pw" placeholder="Repeat Password" required="required" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">Get started</button>
+      <p class="disclaimer">By signing up, you agree with our <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a></p>
+    </form>
+  </section>
+
+</div>
+
+<%= javascript_include_tag 'frontend' %>
+
+<script>
+
+  $(document).ready(function(){
+    isotope();
+    signupOverlay();
+    loginOverlay();
+  });
+
+</script>
+
+</body>
+</html>

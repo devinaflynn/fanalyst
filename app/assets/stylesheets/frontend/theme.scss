@@ -105,10 +105,10 @@ p {
   line-height: 1.75;
 }
 a {
-  color: #ffba43;
+  color: #88b7b3;
 }
 a:hover {
-  color: #ffba43;
+  color: #88b7b3;
   text-decoration: underline;
 }
 blockquote {
@@ -118,7 +118,7 @@ blockquote {
   color: white !important;
 }
 .highlight {
-  color: #ffba43;
+  color: #88b7b3;
 }
 .vertical-align {
   margin: 100px 0;
@@ -140,13 +140,13 @@ blockquote {
 }
 .btn.btn-empty {
   background: none !important;
-  border: 2px solid #ffba43;
-  color: #ffba43 !important;
+  border: 2px solid #88b7b3;
+  color: #88b7b3 !important;
 }
 .btn.btn-empty:hover {
   background-color: rgba(0, 0, 0, 0.03) !important;
-  border-color: 2px solid #dc8b00;
-  color: #dc8b00;
+  border-color: 2px solid #528783;
+  color: #528783;
 }
 .btn-default {
   background: #eaeaea;
@@ -320,7 +320,7 @@ blockquote {
   padding: 1em 0;
 }
 .navbar .navbar-nav .current > a {
-  color: #ffba43 !important;
+  color: #88b7b3 !important;
 }
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus {
@@ -340,7 +340,7 @@ blockquote {
   font-size: 0.9em;
 }
 .navbar .nav > li ul .dropdown-header {
-  color: #ffba43;
+  color: #88b7b3;
 }
 .navbar-brand,
 .navbar-nav > li > a {
@@ -416,7 +416,7 @@ blockquote {
 }
 .cbp-af-header .nav li.open > a {
   background: none;
-  color: #ffba43;
+  color: #88b7b3;
 }
 .cbp-af-header .nav li ul a {
   color: #333333;
@@ -432,10 +432,10 @@ blockquote {
   text-transform: uppercase;
 }
 .cbp-af-header .nav a.signup {
-  color: #ffba43 !important;
+  color: #88b7b3 !important;
 }
 .cbp-af-header .nav a:hover {
-  color: #ffba43;
+  color: #88b7b3;
   background: none;
 }
 /* Transitions and class for reduced height */
@@ -532,7 +532,7 @@ blockquote {
   top: 20px;
   overflow: hidden;
   border: none;
-  background: url(../img/cross.png) no-repeat center center;
+  background: image-url("frontend/cross.png") no-repeat center center;
   text-indent: 200%;
   color: transparent;
   outline: none;
@@ -566,14 +566,14 @@ blockquote {
   border-radius: 4px;
 }
 .login-part input:focus {
-  border-color: #ffba43;
+  border-color: #88b7b3;
 }
 .login-part button[type='submit'] {
-  background: #ffba43;
+  background: #88b7b3;
   padding: 17px;
 }
 .login-part button[type='submit']:hover {
-  background: #ffa710;
+  background: #68a49f;
 }
 .login-part a.forgot-pw {
   display: block;
@@ -594,7 +594,7 @@ blockquote {
   padding: 0 1.5em;
 }
 .login-part p.disclaimer a {
-  color: #ffba43;
+  color: #88b7b3;
 }
 #signup .login-part {
   height: 362px;
@@ -676,7 +676,7 @@ section .login-overlay {
   cursor: pointer;
 }
 .grabbing {
-  cursor: url(../img/grabbing.png) 8 8, move;
+  cursor: image-url("frontend/grabbing.png") 8 8, move;
 }
 /*
 *   Owl Carousel Owl Demo Theme 
@@ -813,7 +813,7 @@ section .login-overlay {
 }
 .owl-item.loading {
   min-height: 150px;
-  background: url(../img/AjaxLoader.gif) no-repeat center center;
+  background: image-url("frontend/AjaxLoader.gif") no-repeat center center;
 }
 .owl-origin {
   -webkit-perspective: 1200px;
@@ -1172,7 +1172,7 @@ section .login-overlay {
   border-bottom: 0;
 }
 #intro-video {
-  background: url('../img/bg-videofallback.jpg');
+  background: image-url("frontend/bg-videofallback.jpg");
   background-size: cover;
 }
 #intro .item,
@@ -1223,13 +1223,13 @@ section .login-overlay {
 #intro-video .carousel-caption-center .btn {
   margin: 1em 0;
   padding: 1em 2em;
-  background: #ffba43;
+  background: #88b7b3;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 #intro .carousel-caption-center .btn:hover,
 #intro-video .carousel-caption-center .btn:hover {
-  background: #ffa710;
+  background: #68a49f;
 }
 #intro .carousel-caption-left,
 #intro-video .carousel-caption-left {
@@ -1262,13 +1262,13 @@ section .login-overlay {
 #intro-video .carousel-caption-left .btn {
   margin: 1em 0;
   padding: 1em 2em;
-  background: #ffba43;
+  background: #88b7b3;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 #intro .carousel-caption-left .btn:hover,
 #intro-video .carousel-caption-left .btn:hover {
-  background: #ffa710;
+  background: #68a49f;
 }
 .overlay-bg {
   position: absolute;
@@ -1304,7 +1304,7 @@ section .login-overlay {
 }
 .ie9 .overlay-bg,
 .ie8 .overlay-bg {
-  background: url('../img/ie-overlay.png');
+  background: image-url("/frontend/ie-overlay.png");
 }
 .mb_YTVPlayer :focus {
   outline: 0;
@@ -1468,10 +1468,10 @@ section .login-overlay {
   -webkit-box-shadow: #666666 1px 1px 3px;
 }
 .YTPOverlay.raster {
-  background: url("../images/raster.png");
+  background: image-url("frontend/raster.png");
 }
 .YTPOverlay.raster.retina {
-  background: url("../images/raster@2x.png");
+  background: image-url("frontend/raster@2x.png");
 }
 section {
   padding: 4em 0;
@@ -1498,7 +1498,7 @@ section h3 {
   font-size: 1em;
   font-weight: 600;
   text-transform: uppercase;
-  color: #ffba43;
+  color: #88b7b3;
   letter-spacing: 1px;
 }
 section p {
@@ -1513,14 +1513,14 @@ section.light {
   background: #ededed;
 }
 section.light.with-bg {
-  background: url('../img/bg-content1.jpg') center center no-repeat;
+  background: image-url("frontend/bg-content1.jpg") center center no-repeat;
   background-size: cover;
 }
 section.dark {
   background: #2b2d35;
 }
 section.dark.with-bg {
-  background: url('../img/bg-content1.jpg') center center no-repeat;
+  background: image-url("frontend/bg-content1.jpg") center center no-repeat;
   background-size: cover;
 }
 section.dark h1,
@@ -1584,17 +1584,17 @@ section.cta p:last-child {
   padding-bottom: 0;
 }
 section.cta .btn {
-  background: #ffba43;
+  background: #88b7b3;
   color: white;
   padding: 0.5em 2em;
   font-size: 1em;
   margin: 0 1em;
-  border: 2px solid #ffba43;
+  border: 2px solid #88b7b3;
   text-transform: uppercase;
 }
 section.cta .btn:hover {
-  background: #ffab1a;
-  border-color: #ffab1a;
+  background: #6fa8a3;
+  border-color: #6fa8a3;
 }
 section .overlay-text {
   z-index: 10;
@@ -1694,14 +1694,14 @@ section .overlay-text {
   margin: 2em 0;
 }
 #pricing .plan .plan-cta .plan-buy .btn {
-  background: #ffba43;
+  background: #88b7b3;
   padding: 10px 30px;
   font-size: 1em;
   font-weight: 300;
   color: white;
 }
 #pricing .plan .plan-cta .plan-buy .btn:hover {
-  background: #ffa710;
+  background: #68a49f;
 }
 #pricing .plan.featured {
   padding: 1.5em 0 0;
@@ -1753,10 +1753,10 @@ section .overlay-text {
   content: '';
 }
 #testimonials .carousel blockquote a {
-  color: #ffba43;
+  color: #88b7b3;
 }
 #testimonials .carousel blockquote a:hover {
-  color: #ffba43;
+  color: #88b7b3;
   text-decoration: underline;
 }
 #portfolio .portfolio-item {
@@ -1846,7 +1846,7 @@ section .overlay-text {
   line-height: 35px;
   border: 1px solid #fff;
   border-radius: 50%;
-  color: #ffba43;
+  color: #88b7b3;
   text-decoration: none;
 }
 .grid figcaption a.preview {
@@ -1858,7 +1858,7 @@ section .overlay-text {
 .grid figcaption a.link:hover,
 .grid figcaption a.preview:hover {
   background: #fff;
-  color: #ffa710;
+  color: #68a49f;
   transition: background 0.1s linear 0.1s;
 }
 .grid figcaption span {
@@ -2002,7 +2002,7 @@ section .overlay-text {
   padding: 1em 0;
 }
 .contact-form footer button {
-  background: #ffba43;
+  background: #88b7b3;
   border-radius: 4px;
   border: 0;
   color: white;
@@ -2011,7 +2011,7 @@ section .overlay-text {
   transition: all linear .2s;
 }
 .contact-form footer button:hover {
-  background: #ffa710;
+  background: #68a49f;
 }
 .contact-form footer button:focus {
   outline: none;
@@ -2039,7 +2039,7 @@ footer.footer .footer-logo a {
   color: #C9CACC;
 }
 footer.footer .footer-logo a:hover {
-  color: #ffba43;
+  color: #88b7b3;
   text-decoration: none;
 }
 footer.footer h2 {
@@ -2066,7 +2066,7 @@ footer.footer ul li a {
   color: #C9CACC;
 }
 footer.footer ul li a:hover {
-  color: #ffba43;
+  color: #88b7b3;
   text-decoration: none;
 }
 footer.footer .copyright {
@@ -2093,13 +2093,13 @@ footer.footer .icon {
   font-size: 1em;
 }
 .icon:hover {
-  color: #ffba43;
+  color: #88b7b3;
 }
 .icons .icon-wrapper {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background-color: rgba(255, 186, 66, 0.4);
+  background-color: rgba(137, 184, 180, 0.4);
   text-align: center;
   margin: 2em auto 0;
   padding: 3em 0;
@@ -2112,7 +2112,7 @@ footer.footer .icon {
 .icons .icon-wrapper span {
   text-transform: uppercase;
   font-weight: 600;
-  color: #dc8b00;
+  color: #528783;
 }
 .icons p {
   margin: 0 2em 2em;
@@ -2274,7 +2274,7 @@ footer.footer .icon {
   box-shadow: 0px 0px 0px 2px #b5cd60;
 }
 .modal-form input[type="submit"] {
-  background: #ffba43;
+  background: #88b7b3;
   border: 0;
   color: white;
   font-weight: bold;
@@ -2284,7 +2284,7 @@ footer.footer .icon {
   width: 100%;
 }
 .modal-form input[type="submit"]:hover {
-  background: #dc8b00;
+  background: #528783;
 }
 .modal-form .forgot {
   margin: 1.5em 0;
