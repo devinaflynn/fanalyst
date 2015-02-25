@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) << :profile_image
   end
+
+  def after_sign_in_path_for(resource)
+    request.referer || leaderboard_path
+  end
 end
