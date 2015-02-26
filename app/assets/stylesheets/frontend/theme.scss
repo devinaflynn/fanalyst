@@ -1223,7 +1223,7 @@ section .login-overlay {
 #intro-video .carousel-caption-center .btn {
   margin: 1em 0;
   padding: 1em 2em;
-  background: #88b7b3;
+  background: #253993;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -1498,7 +1498,7 @@ section h3 {
   font-size: 1em;
   font-weight: 600;
   text-transform: uppercase;
-  color: #88b7b3;
+  color: #000;
   letter-spacing: 1px;
 }
 section p {
@@ -1513,14 +1513,14 @@ section.light {
   background: #ededed;
 }
 section.light.with-bg {
-  background: image-url("frontend/bg-content1.jpg") center center no-repeat;
+  background: image-url("frontend/bg2.jpg") center center no-repeat;
   background-size: cover;
 }
 section.dark {
   background: #2b2d35;
 }
 section.dark.with-bg {
-  background: image-url("frontend/bg-content1.jpg") center center no-repeat;
+  background: image-url("frontend/bg2.jpg") center center no-repeat;
   background-size: cover;
 }
 section.dark h1,
@@ -2099,7 +2099,7 @@ footer.footer .icon {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background-color: rgba(137, 184, 180, 0.4);
+  background-color: rgba(37,57,147, 1);
   text-align: center;
   margin: 2em auto 0;
   padding: 3em 0;
