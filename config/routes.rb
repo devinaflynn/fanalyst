@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'home' => 'pages#home'
   get 'leaderboard' => 'leaderboard#index'
-  get 'nfl_leaderboard' => 'pages#nfl_leaderboard'
+  get 'nfl_leaderboard' => 'leaderboard#nfl_leaderboard'
+  get 'mlb_leaderboard' => 'leaderboard#mlb_leaderboard'
+  get 'soccer_leaderboard' => 'leaderboard#soccer_leaderboard'
+  get 'march_madness_leaderboard' => 'leaderboard#march_madness_leaderboard'
+  get 'nhl_leaderboard' => 'leaderboard#nhl_leaderboard'
 
 
   # Example of regular route:

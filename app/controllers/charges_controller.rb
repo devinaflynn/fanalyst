@@ -1,4 +1,4 @@
-class ChargesController < ApplicationController
+class ChargesController < ApplicationSignedInController
   def create
     # Amount in cents
     @subcription_user = User.find(params[:subcription_user_id])

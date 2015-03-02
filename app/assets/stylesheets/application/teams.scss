@@ -23,9 +23,10 @@
 }
 
 td {
-  font-size: 180%;
+  font-size: 220%;
+  font-weight: 100;
 }
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-   background-color:      #FAF5E6;
+   background-color:      #fff;
 }

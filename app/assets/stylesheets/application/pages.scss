@@ -2,4 +2,20 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.btn-primary {
+    background: #999 !important;
+    color: #ffffff;
+    border: none !important;
+}
+ 
 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+ 
+
+ .btn-success{
+    background: #253993 !important;
+    color: #ffffff;
+    border: none !important;
+}

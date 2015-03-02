@@ -1,4 +1,4 @@
-class ResultsController < ApplicationController
+class ResultsController < ApplicationSignedInController
   def new
     @team = current_user.teams.find(params[:team_id])
     @result = @team.build_result

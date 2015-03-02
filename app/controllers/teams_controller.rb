@@ -1,4 +1,4 @@
-class TeamsController < ApplicationController
+class TeamsController < ApplicationSignedInController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
