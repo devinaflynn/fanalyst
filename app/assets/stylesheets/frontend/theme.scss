@@ -320,7 +320,7 @@ blockquote {
   padding: 1em 0;
 }
 .navbar .navbar-nav .current > a {
-  color: #88b7b3 !important;
+  color: #000 !important;
 }
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus {
@@ -432,7 +432,7 @@ blockquote {
   text-transform: uppercase;
 }
 .cbp-af-header .nav a.signup {
-  color: #88b7b3 !important;
+  color: #253993 !important;
 }
 .cbp-af-header .nav a:hover {
   color: #88b7b3;
@@ -1223,13 +1223,13 @@ section .login-overlay {
 #intro-video .carousel-caption-center .btn {
   margin: 1em 0;
   padding: 1em 2em;
-  background: #88b7b3;
+  background: #253993;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 #intro .carousel-caption-center .btn:hover,
 #intro-video .carousel-caption-center .btn:hover {
-  background: #68a49f;
+  background: #254b93;
 }
 #intro .carousel-caption-left,
 #intro-video .carousel-caption-left {
@@ -1498,7 +1498,7 @@ section h3 {
   font-size: 1em;
   font-weight: 600;
   text-transform: uppercase;
-  color: #88b7b3;
+  color: #000;
   letter-spacing: 1px;
 }
 section p {
@@ -1513,14 +1513,14 @@ section.light {
   background: #ededed;
 }
 section.light.with-bg {
-  background: image-url("frontend/bg-content1.jpg") center center no-repeat;
+  background: image-url("frontend/bg2.jpg") center center no-repeat;
   background-size: cover;
 }
 section.dark {
   background: #2b2d35;
 }
 section.dark.with-bg {
-  background: image-url("frontend/bg-content1.jpg") center center no-repeat;
+  background: image-url("frontend/bg2.jpg") center center no-repeat;
   background-size: cover;
 }
 section.dark h1,
@@ -1584,17 +1584,15 @@ section.cta p:last-child {
   padding-bottom: 0;
 }
 section.cta .btn {
-  background: #88b7b3;
+  background: #253993;
   color: white;
   padding: 0.5em 2em;
   font-size: 1em;
   margin: 0 1em;
-  border: 2px solid #88b7b3;
   text-transform: uppercase;
 }
 section.cta .btn:hover {
-  background: #6fa8a3;
-  border-color: #6fa8a3;
+  background: #253993;
 }
 section .overlay-text {
   z-index: 10;
@@ -2025,7 +2023,7 @@ section .overlay-text {
   color: rgba(51, 51, 51, 0.7);
 }
 footer.footer {
-  background: #2b2d35;
+  background: #000;
   padding: 5em 0;
   color: white;
 }
@@ -2099,7 +2097,7 @@ footer.footer .icon {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background-color: rgba(137, 184, 180, 0.4);
+  background-color: rgba(37,57,147, 1);
   text-align: center;
   margin: 2em auto 0;
   padding: 3em 0;
