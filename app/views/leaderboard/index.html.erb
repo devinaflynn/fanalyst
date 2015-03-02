@@ -1,6 +1,10 @@
 <%= render '/shared/header' %>
 
 <div class="container2">
+ <p><%= link_to 'NFL', nfl_leaderboard_path, class: "btn btn-success" %>
+ <%= link_to 'MLB', leaderboard_path, class: "btn btn-success" %>
+ <%= link_to 'Soccer', leaderboard_path, class: "btn btn-success" %>
+ <%= link_to 'March Madness', leaderboard_path, class: "btn btn-success" %></p>
   <h1>Daily Fantasy Sports NBA Leaderboard</h1>
    <h4>Learn from and follow the best DFS managers</h4>
   <table class="table table-striped">
@@ -16,10 +20,10 @@
     <% @users.each_with_index do |user, index| -%>
       <tr>
         <td><%= index + 1 %></td>
-        <td><img src="<%= user.profile_image.url (:thumb) %>"></td>
+        <td><img src="<%= user.profile_image.url (:thumb) %>"></td> 
         <td><%= user.email %></td>
         <td><%= user.avarage_score.round(1) %></td>
-        <td><%= link_to '', user_detail_path(user), class: "btn btn-primary fa fa-bars" %></td>
+        <td><%= link_to '', user_detail_path(user), class: "btn btn-success fa fa-bars" %></td>
       </tr>
     <% end -%>
     </tbody>
