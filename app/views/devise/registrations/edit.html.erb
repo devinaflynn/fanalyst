@@ -12,7 +12,7 @@
 
   <% if resource.persisted? -%>
   <div class="form-group">
-    <img src="<%= resource.profile_image.url%>">
+    <img width="100" src="<%= resource.profile_image.url%>">
 
     <%= f.label :profile_image %>
     <%= f.file_field :profile_image, class: "form-control" %>

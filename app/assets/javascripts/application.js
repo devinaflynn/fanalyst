@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require application/upload
 //= require bootstrap-tagsinput
+//= require bootstrap
