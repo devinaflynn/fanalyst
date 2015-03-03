@@ -55,6 +55,7 @@ gem 'pg'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass'
+gem 'aws-sdk'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro', group: [:development, :test]
