@@ -33,4 +33,4 @@ $ heroku config:add ACTION_MAILER_URL=<action_mailer.default_url_options>  --app
 
 Required add-ons:
 
-* Sentry
+* Sendgrid
