@@ -47,6 +47,7 @@ end
 
 # app specific
 group :production do
+  gem 'rails_12factor'
   gem 'unicorn'
 end
 
