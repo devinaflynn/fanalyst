@@ -8,8 +8,14 @@ class User < ActiveRecord::Base
   has_many :payments
   has_many :results
 
-  has_attached_file :profile_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :profile_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, default_url: '/assets/profile/avatar.svg'
   validates_attachment_content_type :profile_image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+  acts_as_taggable_on :sports, :favorite_teams
+  attr_accessor :sport_tags
+  attr_accessor :favorite_team_tags
+
+
 
   # returns true if the current user payed to have access to the user profile
   def allowed?(user)
@@ -29,5 +35,11 @@ class User < ActiveRecord::Base
 
     clean_up_passwords
     result
+  end
+
+  def current_rank
+    # TODO: in the future this will need to be refactored for performance reasons
+    @users = User.order(avarage_score: :desc)
+    @users.map(&:id).index(self.id)
   end
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { :registrations => :registrations }
   resources :teams do
     resource :result
   end
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'user/:id' => 'user#index', as: 'user_detail'
 
-  root 'pages#home'
+
   get 'home' => 'pages#home'
   get 'leaderboard' => 'leaderboard#index'
   get 'nfl_leaderboard' => 'leaderboard#nfl_leaderboard'
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'soccer_leaderboard' => 'leaderboard#soccer_leaderboard'
   get 'march_madness_leaderboard' => 'leaderboard#march_madness_leaderboard'
   get 'nhl_leaderboard' => 'leaderboard#nhl_leaderboard'
+
+  root 'pages#home'
 
 
   # Example of regular route:

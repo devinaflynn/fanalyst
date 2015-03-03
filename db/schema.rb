@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127014554) do
+ActiveRecord::Schema.define(version: 20150303015450) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "payments", force: :cascade do |t|
     t.integer  "user_id"
@@ -22,8 +25,8 @@ ActiveRecord::Schema.define(version: 20150127014554) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "payments", ["allowed_user_id"], name: "index_payments_on_allowed_user_id"
-  add_index "payments", ["user_id"], name: "index_payments_on_user_id"
+  add_index "payments", ["allowed_user_id"], name: "index_payments_on_allowed_user_id", using: :btree
+  add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
 
   create_table "results", force: :cascade do |t|
     t.text     "notes"
@@ -37,7 +40,27 @@ ActiveRecord::Schema.define(version: 20150127014554) do
     t.datetime "updated_at",         null: false
   end
 
-  add_index "results", ["team_id"], name: "index_results_on_team_id", unique: true
+  add_index "results", ["team_id"], name: "index_results_on_team_id", unique: true, using: :btree
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
+
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "teams", force: :cascade do |t|
     t.text     "notes"
@@ -51,12 +74,13 @@ ActiveRecord::Schema.define(version: 20150127014554) do
     t.datetime "updated_at",         null: false
   end
 
-  add_index "teams", ["user_id"], name: "index_teams_on_user_id"
+  add_index "teams", ["user_id"], name: "index_teams_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.decimal  "price",                      default: 0.0
     t.string   "username"
     t.string   "stripe_customer_id"
+    t.text     "bio"
     t.decimal  "avarage_sum_score",          default: 0.0
     t.integer  "avarage_count_score",        default: 0
     t.decimal  "avarage_score",              default: 0.0
@@ -78,7 +102,7 @@ ActiveRecord::Schema.define(version: 20150127014554) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

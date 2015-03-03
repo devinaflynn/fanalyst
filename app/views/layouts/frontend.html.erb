@@ -60,8 +60,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav pull-right">
             <li><a href="#about">How it works</a></li>
-            <li><a class="hidden-sm login" href="#">Login</a></li>
-            <li><a class="signup" href="#">Sign up</a></li>
+            <li><%= link_to 'Login', new_user_session_path, class: 'hidden-sm login' %></li>
+            <li><%= link_to 'Sign up', new_user_registration_path, class: 'signup' %></li>
           </ul>
         </div>
       </div>
@@ -168,8 +168,8 @@
 
   $(document).ready(function(){
     isotope();
-    signupOverlay();
-    loginOverlay();
+    //signupOverlay();
+    //loginOverlay();
   });
 
 </script>
