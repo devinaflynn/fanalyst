@@ -49,6 +49,8 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass'
 gem 'paperclip', github: 'thoughtbot/paperclip'
-gem 'devise'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro', group: [:development, :test]
+# tags
+gem 'acts-as-taggable-on', '~> 3.4'
+gem 'bootstrap-tagsinput-rails'

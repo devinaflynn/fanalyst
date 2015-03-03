@@ -25,6 +25,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :sports %><br />
+    <%= f.text_field :sport_list, value: f.object.sport_list.to_s, autofocus: true, 'data-role'=>'tagsinput' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :favorite_teams %><br />
+    <%= f.text_field :favorite_team_list, value: f.object.favorite_team_list.to_s, autofocus: true, 'data-role'=>'tagsinput' %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>

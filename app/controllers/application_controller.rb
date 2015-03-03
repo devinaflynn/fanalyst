@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) << :profile_image
     devise_parameter_sanitizer.for(:account_update) << :bio
+    devise_parameter_sanitizer.for(:account_update) << :sport_list
+    devise_parameter_sanitizer.for(:account_update) << :favorite_team_list
   end
 
   def after_sign_in_path_for(resource)

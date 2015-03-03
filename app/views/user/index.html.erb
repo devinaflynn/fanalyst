@@ -21,26 +21,27 @@
   <% end %>
 
   <div class="container">
-                    <center>
-                      <img src="<%= @user.profile_image.url(:thumb) if !@user.profile_image.nil? %>" width="100" border="0" class="img-circle">
-                      <h3 class="media-heading"><%= @user.email %></h3>
-                      <span><strong>Sports: </strong></span>
-                      <span class="label label-default">NBA</span>
-                      <span class="label label-default">NFL</span>
-                      <span class="label label-default">Soccer</span>
-                      <span><strong>Teams: </strong></span>
-                      <span class="label label-danger">Hawks</span>
-                      <span class="label label-danger">Braves</span>
-                    </center>
-                    <hr>
-                    <center>
-                      <div class="col-md-5 col-md-offset-4">
-                      <p class="text-left"><strong>Bio: </strong><br>
-                        <%= simple_format @user.bio %>
-                      </p>
-                      <br>
-                    </center>
-                </div>
+      <center>
+        <img src="<%= @user.profile_image.url(:thumb) if !@user.profile_image.nil? %>" width="100" border="0" class="img-circle">
+        <h3 class="media-heading"><%= @user.email %></h3>
+        <span><strong>Sports: </strong></span>
+        <% @user.sport_list.each do |item| %>
+          <span class="label label-default"><%= item %></span>
+        <% end %>
+        <span><strong>Teams: </strong></span>
+        <% @user.favorite_team_list.each do |item| %>
+          <span class="label label-danger"><%= item %></span>
+        <% end %>
+      </center>
+      <hr>
+      <center>
+        <div class="col-md-5 col-md-offset-4">
+        <p class="text-left"><strong>Bio: </strong><br>
+          <%= simple_format @user.bio %>
+        </p>
+        <br>
+      </center>
+  </div>
                
 
   <div class="container3">
