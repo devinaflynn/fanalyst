@@ -4,6 +4,7 @@ class InitialModel < ActiveRecord::Migration
       t.decimal :price, default: 0
       t.string :username
       t.string :stripe_customer_id, default: nil
+      t.text   :bio
 
       t.decimal :avarage_sum_score, default: 0
       t.integer :avarage_count_score, default: 0
