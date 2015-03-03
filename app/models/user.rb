@@ -30,4 +30,10 @@ class User < ActiveRecord::Base
     clean_up_passwords
     result
   end
+
+  def current_rank
+    # TODO: in the future this will need to be refactored for performance reasons
+    @users = User.order(avarage_score: :desc)
+    @users.map(&:id).index(self.id)
+  end
 end

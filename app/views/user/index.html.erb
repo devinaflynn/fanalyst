@@ -46,8 +46,8 @@
   <div class="container3">
     <img src="<%= @user.profile_image.url(:thumb) if !@user.profile_image.nil? %>" width="100">
     <h3> <%= @user.email %></h3>
-    <h3>Rank: 4</h3>
-    <h4>Avg. Score: 289</h4>
+    <h3>Rank: <%= @user.current_rank %></h3>
+    <h4>Avg. Score:<%= @user.avarage_score.round(1) %></h4>
   </div>  
 
 
