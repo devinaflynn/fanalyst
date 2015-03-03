@@ -22,29 +22,28 @@
 
   <div class="container">
                     <center>
-                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-                    <h3 class="media-heading">Joe Sanders <small>USA</small></h3>
-                    <span><strong>Sports: </strong></span>
-                        <span class="label label-default">NBA</span>
-                        <span class="label label-default">NFL</span>
-                        <span class="label label-default">Soccer</span>
-                        <span><strong>Teams: </strong></span>
-                        <span class="label label-danger">Hawks</span>
-                        <span class="label label-danger">Braves</span>
-                        
+                      <img src="<%= @user.profile_image.url(:thumb) if !@user.profile_image.nil? %>" width="100" border="0" class="img-circle">
+                      <h3 class="media-heading"><%= @user.email %></h3>
+                      <span><strong>Sports: </strong></span>
+                      <span class="label label-default">NBA</span>
+                      <span class="label label-default">NFL</span>
+                      <span class="label label-default">Soccer</span>
+                      <span><strong>Teams: </strong></span>
+                      <span class="label label-danger">Hawks</span>
+                      <span class="label label-danger">Braves</span>
                     </center>
                     <hr>
                     <center>
-                    <div class="col-md-5 col-md-offset-4">
-                    <p class="text-left"><strong>Bio: </strong><br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
-                    <br>
+                      <div class="col-md-5 col-md-offset-4">
+                      <p class="text-left"><strong>Bio: </strong><br>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
+                      <br>
                     </center>
                 </div>
                
 
   <div class="container3">
-    <img src="<%= @user.profile_image.url(:thumb) if !@user.profile_image.nil? %>">
+    <img src="<%= @user.profile_image.url(:thumb) if !@user.profile_image.nil? %>" width="100">
     <h3> <%= @user.email %></h3>
     <h3>Rank: 4</h3>
     <h4>Avg. Score: 289</h4>

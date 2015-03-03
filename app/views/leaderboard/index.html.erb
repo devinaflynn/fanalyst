@@ -1,22 +1,18 @@
 <%= render '/shared/header' %>
 
-
-
 <div class="container2">
 
 <h2> NBA Leaderboard </h2>
 
 </div>
 
-
  <p>
- <%= link_to 'NBA', leaderboard_path, class: "btn btn-primary" %>
- <%= link_to 'NFL', nfl_leaderboard_path, class: "btn btn-primary" %>
- <%= link_to 'MLB', mlb_leaderboard_path, class: "btn btn-primary" %>
- <%= link_to 'Soccer', soccer_leaderboard_path, class: "btn btn-primary" %>
- <%= link_to 'March Madness', march_madness_leaderboard_path, class: "btn btn-primary" %>
- <%= link_to 'NHL', nhl_leaderboard_path, class: "btn btn-primary" %>
-
+   <%= link_to 'NBA', leaderboard_path, class: "btn btn-primary" %>
+   <%= link_to 'NFL', nfl_leaderboard_path, class: "btn btn-primary" %>
+   <%= link_to 'MLB', mlb_leaderboard_path, class: "btn btn-primary" %>
+   <%= link_to 'Soccer', soccer_leaderboard_path, class: "btn btn-primary" %>
+   <%= link_to 'March Madness', march_madness_leaderboard_path, class: "btn btn-primary" %>
+   <%= link_to 'NHL', nhl_leaderboard_path, class: "btn btn-primary" %>
  </p>
  
   <table class="table table-striped">
@@ -32,7 +28,7 @@
     <% @users.each_with_index do |user, index| -%>
       <tr>
         <td><%= index + 1 %></td>
-        <td><img src="<%= user.profile_image.url (:thumb) %>"></td> 
+        <td><img src="<%= user.profile_image.url (:thumb) %>" class="img-circle", width="100"></td>
         <td><%= user.email %></td>
         <td><%= user.avarage_score.round(1) %></td>
         <td><%= link_to 'View Profile', user_detail_path(user), class: "btn btn-success" %></td>
