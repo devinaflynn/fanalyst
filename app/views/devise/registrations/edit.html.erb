@@ -14,7 +14,7 @@
 
   <% if resource.persisted? -%>
   <div class="form-group">
-    <img width="100" src="<%= resource.profile_image.url%>">
+    <%= image_tag resource.profile_image.url, width: '100' %>
 
     <%= f.label :profile_image %>
     <%= f.file_field :profile_image, class: "form-control" %>

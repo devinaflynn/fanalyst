@@ -24,7 +24,7 @@
  <div class="col-md-12">
 
   <div class="container2">
-     <img src="<%= @user.profile_image.url(:thumb) if !@user.profile_image.nil? %>" width="100" border="0" class="img-circle">
+    <%= image_tag(@user.profile_image.url(:thumb), width: '100', border: '0', class: 'img-circle') if !@user.profile_image.nil? %>
     <h3> <%= @user.email %></h3>
     <p> <%= @user.bio %> </p>
     <h3>Rank: <%= @user.current_rank %></h3>

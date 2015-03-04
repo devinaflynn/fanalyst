@@ -1,5 +1,5 @@
 
-<img src="<%= @user.profile_image.url(:thumb) if !@user.profile_image.nil? %>" width="100" border="0" class="img-circle">
+<%= image_tag(@user.profile_image.url(:thumb), width: '100', border: '0', class: 'img-circle' ) if !@user.profile_image.nil? %>
 <h3 class="media-heading"><%= @user.email %></h3>
 <span><strong>Sports: </strong></span>
 <% @user.sport_list.each do |item| %>

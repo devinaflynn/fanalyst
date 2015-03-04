@@ -33,7 +33,7 @@
         <td><%= index + 1 %></td>
         <td>
           <%= link_to leaderboard_profile_path(user), remote: true do %>
-            <img src="<%= user.profile_image.url (:thumb) %>" class="img-circle", width="100">
+            <%= image_tag user.profile_image.url(:thumb), class: 'img-circle', width: '100' %>
           <% end %>
         </td>
         <td><%= user.email %></td>
