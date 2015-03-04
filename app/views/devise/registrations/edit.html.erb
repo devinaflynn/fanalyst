@@ -1,11 +1,13 @@
 <%= render '/shared/header' %>
 
 
-<div class="col-md-6 col-md-offset-3">
-<div class="container3">
-<div class="panel panel-default">
+  <div class="container2">
+       <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 well well-sm">
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -29,26 +31,33 @@
     <%= f.text_field :sport_list, value: f.object.sport_list.to_s, autofocus: true  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :favorite_teams %><br />
     <%= f.text_field :favorite_team_list, value: f.object.favorite_team_list.to_s, autofocus: true %>
   </div>
 
+
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+  
   <script>
     $('#user_sport_list').tagsinput();
     $('#user_favorite_team_list').tagsinput();
   </script>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="actions">
+    <%= f.submit "Save Changes", class: "btn-block btn-success btn-lg" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
+
+
+  <div class="form-group">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
@@ -58,9 +67,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+  
 <% end %>
 
 <h3>Cancel my account</h3>

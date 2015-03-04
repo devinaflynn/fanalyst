@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
   <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default2">
+    <div class="panel panel-default">
       <div class="panel-heading">
         <h4>Devin's Team</h4>
 
         <%= image_tag @team.image.url %>
 
-        <div class="alert alert-success " >
+        <div class="alert alert-default " >
           <strong>Notes:</strong>
           <%= simple_format(@team.notes) %>
         </div>
@@ -15,7 +15,7 @@
         <% if @team.result && @team.result.image.exists? %>
         <%= image_tag @team.result.image.url %>
 
-        <div class="alert alert-success " >
+        <div class="alert alert-default " >
           <strong>Notes:</strong>
           <%= simple_format(@team.result.notes) %>
           <strong>Score:</strong>

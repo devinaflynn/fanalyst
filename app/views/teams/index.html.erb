@@ -4,7 +4,7 @@
 
     <% @teams.each do |team| %>
 
-
+  <div class="col-md-12">
      <div class="col-md-6">
       <div class="panel panel-default">
        <div class="panel-heading">
@@ -26,8 +26,9 @@
                       class: "btn btn-primary btn btn-sm", style: "margin-right:5px;"%></div>
         <%= image_tag team.result.image.url(:medium) if !team.result.nil? %>
      </div> 
-     </div>
-     </div>
+      </div>
+        </div>
+          </div>
   
 
       
