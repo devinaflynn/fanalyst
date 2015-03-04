@@ -31,7 +31,11 @@
     <% @users.each_with_index do |user, index| -%>
       <tr>
         <td><%= index + 1 %></td>
-        <td><img src="<%= user.profile_image.url (:thumb) %>" class="img-circle", width="100"></td>
+        <td>
+          <%= link_to leaderboard_profile_path(user), remote: true do %>
+            <img src="<%= user.profile_image.url (:thumb) %>" class="img-circle", width="100">
+          <% end %>
+        </td>
         <td><%= user.email %></td>
         <td><%= user.avarage_score.round(1) %></td>
         <td><%= link_to 'View Profile', user_detail_path(user), class: "btn btn-success" %></td>
@@ -40,3 +44,22 @@
     </tbody>
   </table>
 </div>
+
+
+
+<div class="modal fade" id="dialog-form">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div id="profile" class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
