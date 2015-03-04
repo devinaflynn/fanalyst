@@ -12,7 +12,7 @@ User.create([
   {email: 'test4@test.com', password: 'abcd1234', password_confirmation: 'abcd1234', username: 'user 4', price: 20}
 ])
 
-u = User.last
+u = User.first
 u.teams << Team.new(notes: 'Team 1', image: File.open("#{Rails.root}/public/tmp/team.png"))
 u.teams << Team.new(notes: 'Team 2', image: File.open("#{Rails.root}/public/tmp/team.png"))
 u.teams << Team.new(notes: 'Team 3', image: File.open("#{Rails.root}/public/tmp/team.png"))
