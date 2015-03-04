@@ -1,13 +1,16 @@
 <%= render '/shared/header' %>
 
 <div class="container2">
+<div class="jumbotron">
 
 <h1> NBA Leaderboard </h1>
 
 </div>
 
+</div>
+
  <p>
-   <%= link_to 'NBA', leaderboard_path, class: "btn btn-primary" %>
+   <%= link_to 'NBA', leaderboard_path, class: "btn btn-success" %>
    <%= link_to 'NFL', nfl_leaderboard_path, class: "btn btn-primary" %>
    <%= link_to 'MLB', mlb_leaderboard_path, class: "btn btn-primary" %>
    <%= link_to 'Soccer', soccer_leaderboard_path, class: "btn btn-primary" %>

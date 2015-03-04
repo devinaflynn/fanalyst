@@ -105,10 +105,10 @@ p {
   line-height: 1.75;
 }
 a {
-  color: #88b7b3;
+  color: #666;
 }
 a:hover {
-  color: #88b7b3;
+  color: #fff;
   text-decoration: underline;
 }
 blockquote {
@@ -340,7 +340,7 @@ blockquote {
   font-size: 0.9em;
 }
 .navbar .nav > li ul .dropdown-header {
-  color: #88b7b3;
+  color: #fff;
 }
 .navbar-brand,
 .navbar-nav > li > a {
@@ -416,7 +416,7 @@ blockquote {
 }
 .cbp-af-header .nav li.open > a {
   background: none;
-  color: #88b7b3;
+  color: #fff;
 }
 .cbp-af-header .nav li ul a {
   color: #333333;
@@ -435,7 +435,7 @@ blockquote {
   color: #253993 !important;
 }
 .cbp-af-header .nav a:hover {
-  color: #88b7b3;
+  color: #fff;
   background: none;
 }
 /* Transitions and class for reduced height */
@@ -2091,7 +2091,7 @@ footer.footer .icon {
   font-size: 1em;
 }
 .icon:hover {
-  color: #88b7b3;
+  color: #777;
 }
 .icons .icon-wrapper {
   width: 140px;
