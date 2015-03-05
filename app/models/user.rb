@@ -40,6 +40,6 @@ class User < ActiveRecord::Base
   def current_rank
     # TODO: in the future this will need to be refactored for performance reasons
     @users = User.order(avarage_score: :desc)
-    @users.map(&:id).index(self.id)
+    @users.map(&:id).index(self.id) + 1
   end
 end
