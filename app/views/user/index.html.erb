@@ -1,64 +1,47 @@
 <%= render '/shared/header' %>
 
+<div class="row">
 
 
+    <div class="col-lg-5 col-md-6 col-md-offset-3">
+        <div class="media">
+            <a class="pull-left" href="#">
+                 <%= image_tag(@user.profile_image.url(:thumb), width: '100', border: '0', class: 'media-object dp img-circle img-responsive') if !@user.profile_image.nil? %>
+            </a>
+            <div class="media-body">
+                <h2 class="media-heading"><%= @user.current_rank %></h2>
+                <h5><%= @user.email %></h5>
+                <hr style="margin:8px auto">
 
-<section id="t-cards">
-
-
-        <div class="row">
-        <div class="col-md-2 col-md-offset-10">
-
-
-
-                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="12 hours of full access."
-                    name="Fanalyst"
-                    data-image="http://i.imgur.com/HPl8vld.png"
-                    data-amount="<%= (@user.price.round(2)*100).to_i %>"></script>
-
-                    
-            
-              <label class="amount">
-                <span>Amount: <%= number_to_currency(@user.price.round(2)) %></span></br>
-              </label>
-            
-           </div>         
-         
-             <div class="col-sm-6 col-md-6 col-md-offset-3">
-                <div class="panel panel-default panel-card">
-                    <div class="panel-heading">
-                        <img src="http://i.imgur.com/gFygfiS.png" />
-                      
-                    </div>
-                    <div class="panel-figure">
-                        <%= image_tag(@user.profile_image.url(:thumb), width: '100', border: '0', class: 'img-circle img-responsive') if !@user.profile_image.nil? %>
-                    </div>
-                    <div class="panel-body text-center">
-                        <h4><%= @user.email %></h4>
-                        <p>Rank: <%= @user.current_rank %></p>
-                        <div class="alert alert-default">
-                        <p> <%= @user.bio %> </p>
-                         <h4>Avg. Score:<%= @user.avarage_score.round(1) %></h4>
-                       <span><strong>Sports: </strong></span>
+                       <span><strong></strong></span>
                       <% @user.sport_list.each do |item| %>
                      <span class="label label-default"><%= item %></span>
                     <% end %>
-                   <span><strong>Teams: </strong></span>
+                   <span><strong></strong></span>
                   <% @user.favorite_team_list.each do |item| %>
                  <span class="label label-primary"><%= item %></span>
-                 <% end %>
-                    </div>
-                   </div> 
-                    
 
-                    </div>
-                </div>  
-              
-               </div>
-              </div>
-            </div>  
+                 <% end %>
+
+                  
+
+            </div>
+        </div>
+
+        <div class="panel-default">
+             <p> <%= @user.bio %> </p>
+               
+        </div>
+
+    </div>
+
+    
+
+</div>
+
+
+
+
 
 <div class="container2">
   <% if flash[:error] %>
@@ -89,6 +72,19 @@
       <div class="panel-default">
        <div class="panel panel-heading">
         <h4>Tonight's Lineups</h4>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="12 hours of full access."
+                    name="Fanalyst"
+                    data-image="http://i.imgur.com/HPl8vld.png"
+                    data-amount="<%= (@user.price.round(2)*100).to_i %>"></script>
+
+                </br>    
+              <label class="amount">
+                <span><%= number_to_currency(@user.price.round(2)) %></span></br>
+              </label>
+            </div>        
+
         <img src="http://i.imgur.com/hly7cdk.png" alt="Daily Fantasy Lineups" style="width:350px;height:460px">
 
         <% if !user_signed_in? %>
@@ -114,12 +110,13 @@
        
         </div>
       </div>
-    </div>
+   
   
     <div class="col-xs-12 col-md-6 col-sm-6">
      <div class="panel-default">
        <div class="panel panel-heading">
         <h4>Previous Lineups</h4>
+        <p>Avg. Score:<%= @user.avarage_score.round(1) %></p>
          </div>
       
         <% @results.each do |result| -%>
