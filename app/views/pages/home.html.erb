@@ -1,14 +1,14 @@
 <!-- Hero Banner
 ================================================== -->
 <div id="intro">
-  <div class="item background-cover" style="background: url('<%= asset_path('frontend/bg1.jpg') %>')">
+  <div class="item background-cover" style="background: url('<%= asset_path('frontend/bg3.png') %>')">
     <div class="container">
       <div class="row">
         <div class="carousel-caption-center colour-white">
           <h2>Playing is Easy.</h2>
           <h1>Winning is Hard.</h1>
           <p>Learn from and follow the best daily fantasy players</p>
-          <p><%= link_to 'Become a Fanalyst', leaderboard_path, class: "btn btn-danger" %></p>
+          <p><%= link_to 'Learn More', pricing_path, class: "btn btn-danger" %></p>
         </div>
       </div>
     </div>
@@ -27,6 +27,7 @@
     <div class="row">
       <div class="col-lg-12 overlay-text">
         <h2>Think you know fantasy sports? Become a fanalyst and get paid to do what you love</h2>
+        <%= link_to 'Learn More', pricing_path, class: 'btn' %>
       </div><!-- /.col-lg-12 -->
     </div><!-- /.row -->
 
@@ -93,9 +94,11 @@
     <div class="row">
       <div class="col-lg-12">
         <h2>How do you stack up against the best?</h2>
-        <p><%= link_to 'Sign Up', new_user_registration_path, class: 'btn' %></p>
+        <p><%= link_to 'View Leaderboard', leaderboard_path, class: 'btn' %></p>
       </div>
     </div>
+
+
 
   </div>
 

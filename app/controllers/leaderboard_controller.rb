@@ -12,4 +12,13 @@ end
 
 def nfl_leaderboard
 
+end 
+
+
+def jobs
+
+end
+
+def pricing
+
 end  

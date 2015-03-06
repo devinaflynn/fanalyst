@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
 
   get 'home' => 'pages#home'
+
+
+  get 'jobs' => 'leaderboard#jobs'
+  get 'pricing' => 'leaderboard#pricing'
   get 'leaderboard' => 'leaderboard#index'
   get 'leaderboard/profile/:id' => 'leaderboard#profile', as: 'leaderboard_profile'
   get 'nfl_leaderboard' => 'leaderboard#nfl_leaderboard'

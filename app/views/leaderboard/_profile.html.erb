@@ -1,13 +1,14 @@
 
 <%= image_tag(@user.profile_image.url(:thumb), width: '100', border: '0', class: 'img-circle' ) if !@user.profile_image.nil? %>
-<h3 class="media-heading"><%= @user.email %></h3>
-<span><strong>Sports: </strong></span>
+<h3 class="media-heading"><%= @user.username %></h3>
+<span><strong></strong></span>
 <% @user.sport_list.each do |item| %>
   <span class="label label-default"><%= item %></span>
 <% end %>
-<span><strong>Teams: </strong></span>
+<span><strong></strong></span>
 <% @user.favorite_team_list.each do |item| %>
-  <span class="label label-danger"><%= item %></span>
+  <span class="label label-default"><%= item %></span>
 <% end %>
 <hr>
 <%= simple_format @user.bio %>
+<%= link_to 'View Profile', user_detail_path(user), class: "btn btn-success" %>

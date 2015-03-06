@@ -1,16 +1,21 @@
 <%= render '/shared/header' %>
 
+
+
 <div class="row">
+ 
+ <div class="jumbtron">
 
 
+   
     <div class="col-lg-5 col-md-6 col-md-offset-3">
-        <div class="media">
+          <div class="media">
             <a class="pull-left" href="#">
                  <%= image_tag(@user.profile_image.url(:thumb), width: '100', border: '0', class: 'media-object dp img-circle img-responsive') if !@user.profile_image.nil? %>
             </a>
             <div class="media-body">
                 <h2 class="media-heading"><%= @user.current_rank %></h2>
-                <h5><%= @user.email %></h5>
+                <h5><%= @user.username %></h5>
                 <hr style="margin:8px auto">
 
                        <span><strong></strong></span>
@@ -19,16 +24,18 @@
                     <% end %>
                    <span><strong></strong></span>
                   <% @user.favorite_team_list.each do |item| %>
-                 <span class="label label-primary"><%= item %></span>
+                 <span class="label label-default"><%= item %></span>
 
                  <% end %>
 
                   
 
+             </div>
             </div>
-        </div>
 
-        <div class="panel-default">
+
+
+        <div class="panel-default2">
              <p> <%= @user.bio %> </p>
                
         </div>
