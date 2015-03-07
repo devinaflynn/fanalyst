@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .btn-primary {
-    background: #000 !important;
-    color: #ffffff;
+    background: #efefef !important;
+    color: #000 !important;
     border: none !important;
 }
  
@@ -15,7 +15,13 @@
  
 
  .btn-success{
-    background: #253993 !important;
+    background: #a13426 !important;
+    color: #ffffff;
+    border: none !important;
+}
+
+.btn-danger{
+    background: #2656a1 !important;
     color: #ffffff;
     border: none !important;
 }
@@ -50,15 +56,28 @@ body { padding-top:80px; }
 
 
 .box {
-    border-radius: 3px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     padding: 10px 25px;
     text-align: right;
     display: block;
     margin-top: 60px;
+
+}
+
+
+.box2 {
+    border-radius: 15px;
+    
+    padding: 10px 25px;
+    text-align: right;
+    display: block;
+    margin-top: 60px;
+    background-color: #fcf5e2;
+
 }
 .box-icon {
-    background-color: #253993;
+    background-color: #333;
     border-radius: 50%;
     display: table;
     height: 100px;
@@ -125,3 +144,5 @@ body { padding-top:80px; }
     width: 20%; 
 }
 }
+
+
