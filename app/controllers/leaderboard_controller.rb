@@ -1,5 +1,5 @@
 class LeaderboardController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :pricing, :jobs]
+  before_action :authenticate_user!, except: [:index, :pricing, :jobs, :profile]
 
   def index
     @users = User.order(avarage_score: :desc)
