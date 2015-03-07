@@ -115,12 +115,11 @@
    
   
     <div class="col-xs-12 col-md-7 col-sm-6">
-     <div class="panel-default">
+     
       <div class="box">
-       <div class="panel panel-heading">
-        <h4>Previous Lineups</h4>
+        <h4 class="text-center">Previous Lineups</h4>
         <p>Avg. Score:<%= @user.avarage_score.round(1) %></p>
-         </div>
+         
       
         <% @results.each do |result| -%>
 
