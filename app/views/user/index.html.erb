@@ -26,25 +26,17 @@
                   <% @user.favorite_team_list.each do |item| %>
                  <span class="label label-default"><%= item %></span>
 
+
+
                  <% end %>
+                 <h5 class"text-center"> <%= @user.bio %> </h5>
 
                   
 
-             </div>
+                </div>
+              </div>
             </div>
-
-
-
-        <div class="panel-default2">
-             <p> <%= @user.bio %> </p>
-               
-        </div>
-
-    </div>
-
-    
-
-</div>
+           </div>
 
 
 
@@ -76,9 +68,12 @@
   <div class="row">
    <div class="col-md-12">
     <div class="col-xs-12 col-md-6">
-      <div class="panel-default">
+      <div class="box">
        <div class="panel panel-heading">
         <h4>Tonight's Lineups</h4>
+         <label class="amount">
+                <span><%= number_to_currency(@user.price.round(2)) %></span></br>
+              </label>
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                     data-description="12 hours of full access."
@@ -86,16 +81,16 @@
                     data-image="http://i.imgur.com/HPl8vld.png"
                     data-amount="<%= (@user.price.round(2)*100).to_i %>"></script>
 
-                </br>    
-              <label class="amount">
-                <span><%= number_to_currency(@user.price.round(2)) %></span></br>
-              </label>
+                
+             
             </div>        
 
         <img src="http://i.imgur.com/hly7cdk.png" alt="Daily Fantasy Lineups" style="width:350px;height:460px">
 
         <% if !user_signed_in? %>
-           PLease sign in / sign up to see more details about this user
+         <div class="box">
+           <h5 class"text-center">Pay to view lineups</h5>
+         </div>  
         <% elsif @teams %>
           <ul>
             <% @teams.each do |team| -%>
@@ -121,6 +116,7 @@
   
     <div class="col-xs-12 col-md-6 col-sm-6">
      <div class="panel-default">
+      <div class="box">
        <div class="panel panel-heading">
         <h4>Previous Lineups</h4>
         <p>Avg. Score:<%= @user.avarage_score.round(1) %></p>
@@ -141,3 +137,4 @@
   </div>
 </div>
 </div>
+
