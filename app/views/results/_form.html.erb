@@ -1,6 +1,6 @@
 <%= render '/shared/header' %>
 
-<div class="container3">
+<div class="container">
   <%= form_for @result, url: team_result_path(@team), html: {multipart: true} do |f| %>
   <% if @result.errors.any? %>
     <div id="error_explanation">
@@ -15,7 +15,8 @@
     <% end %>
 
     <div class="col-md-5 col-md-offset-3">
-       <div class="container2">
+       
+  <div class="box">
       <h1><%= @result.persisted? ? 'Update' : 'Add' %> result</h1>
 
       <div class="form-group">
@@ -37,9 +38,8 @@
         <%= f.text_area :notes, class: "form-control" %>
       </div>
       <div class="actions">
-        <%= f.submit @result.persisted? ? 'Update' : 'Add', class: "btn btn-primary" %>
-
-        <%= link_to 'Back', edit_team_path(@team), role: 'button', class: 'btn btn-danger' %>
+        <%= link_to 'Back', edit_team_path(@team), role: 'button', class: 'btn btn-primary' %>
+        <%= f.submit @result.persisted? ? 'Update' : 'Add', class: "btn btn-danger" %>
       </div>
     </div>
   </div>

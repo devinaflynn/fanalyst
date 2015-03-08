@@ -31,7 +31,7 @@
 
     <div class="form-group">
       <%= f.label :event %><br>
-      <%= f.text_field :event, :placeholder => "", class: "form-control" %>
+      <%= f.text_field :event, :placeholder => "NBA $7.5K Layup, 50/50, Head to Head", class: "form-control" %>
     </div>
 
     <div class="form-group">
@@ -40,7 +40,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit class: "btn btn-primary" %>
+      <%= f.submit class: "btn btn-success" %>
 
       <% if @team.result -%>
         <%= link_to 'Edit result', edit_team_result_path(@team), class: 'btn btn-danger', role: 'button' %>
