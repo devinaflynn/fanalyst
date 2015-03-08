@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :payments
   has_many :results
 
-  has_attached_file :profile_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, default_url: 'avatar.svg'
+  has_attached_file :profile_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, default_url: 'http://i.imgur.com/1yd9LaF.png'
   validates_attachment_content_type :profile_image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   validates :username, uniqueness: true
