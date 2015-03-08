@@ -1,9 +1,9 @@
 <%= render '/shared/header' %>
 
 
-  <div class="container2">
+  <div class="box">
        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 well well-sm">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
@@ -15,32 +15,29 @@
   <% if resource.persisted? -%>
   <div class="form-group">
     <%= image_tag resource.profile_image.url, width: '100' %>
-
+</div>
+<div class="form-group">
     <%= f.label :profile_image %>
     <%= f.file_field :profile_image, class: "form-control" %>
   </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :bio %><br />
-    <%= f.text_area :bio, autofocus: true, rows: 10 %>
+    <%= f.text_area :bio, :placeholder => "Tell us a little about yourself...", class: "form-control", autofocus: true, rows: 10 %>
   </div>
 
-  <div class="field">
-    <%= f.label :sports %><br />
-    <%= f.text_field :sport_list, value: f.object.sport_list.to_s, autofocus: true  %>
+  <div class="form-group">
+    <%= f.label :dfs_platform %><br />
+    <%= f.text_field :sport_list, :placeholder => "Fan Duel, Draft Kings, Victiv", class: "form-control", value: f.object.sport_list.to_s, autofocus: true  %>
   </div>
 
   <div class="form-group">
     <%= f.label :favorite_teams %><br />
-    <%= f.text_field :favorite_team_list, value: f.object.favorite_team_list.to_s, autofocus: true %>
+    <%= f.text_field :favorite_team_list, :placeholder => "Atlanta Hawks, Boston Bruins, etc", class: "form-control", style: "width:200px;", value: f.object.favorite_team_list.to_s, autofocus: true %>
   </div>
 
 
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
   
   <script>
     $('#user_sport_list').tagsinput();
@@ -56,15 +53,22 @@
   <% end %>
 
 
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, class: "form-control", autofocus: true %>
+  </div>
+  
+
+
 
   <div class="form-group">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
   </div>
 
   
