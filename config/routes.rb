@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'home' => 'pages#home'
 
-
+  get 'player_news_nba' => 'leaderboard#player_news_nba'
   get 'jobs' => 'leaderboard#jobs'
   get 'pricing' => 'leaderboard#pricing'
   get 'leaderboard' => 'leaderboard#index'

@@ -22,3 +22,7 @@ end
 def pricing
 
 end  
+
+def player_news_nba
+
+end  

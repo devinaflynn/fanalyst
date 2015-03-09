@@ -16,3 +16,5 @@
 //= require application/upload
 //= require bootstrap
 //= require bootstrap-tagsinput
+
+
