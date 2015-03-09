@@ -35,6 +35,28 @@
 
 
   <div class="container2">
+    <% if flash[:error] %>
+      <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+    <% if flash[:notice] %>
+      <div class="alert alert-success" role="alert">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-warning" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Attention:</span>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+
+
     <div class="row">
       <div class="col-md-12">
         <div class="col-xs-12 col-md-5">
@@ -44,23 +66,10 @@
               <label class="amount">
                 <span><%= number_to_currency(@user.price.round(2)) %></span></br>
               </label>
-              <hr>
-              <%= form_tag charges_path do %>
-                <%= hidden_field_tag :subcription_user_id, @user.id %>
-                <%= hidden_field_tag :price, @user.price %>
 
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                        data-description="12 hours of full access."
-                        name="Fanalyst"
-                        data-image="<%= asset_url('stripe_button.png') %>"
-                        data-amount="<%= (@user.price.round(2)*100).to_i %>"></script>
+              <% if !user_signed_in? %>
+                <%= render 'stripe_button' %>
               <% end %>
-
-
-              <script src="https://checkout.stripe.com/checkout.js"></script>
-
-
 
             </div>
 
@@ -79,7 +88,6 @@
                   </li>
                 <% end %>
               </ul>
-
 
 
             <% end %>

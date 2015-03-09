@@ -14,8 +14,8 @@ class ChargesController < ApplicationSignedInController
 
     amount = (params[:price].to_f.round(2)*100).to_i
 
-    byebug
     begin
+      # TODO: ask for a user by e-mail address instead assuming that we have the stripe_customer_id
       if current_user.stripe_customer_id
         customer = Stripe::Customer.retrieve(current_user.stripe_customer_id)
       else
