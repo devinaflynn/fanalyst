@@ -3,137 +3,119 @@
 
 
 <div class="row">
- 
- <div class="jumbtron">
-
-
-   
+  <div class="jumbtron">
     <div class="col-lg-5 col-md-6 col-md-offset-3">
-          <div class="media">
-            <a class="pull-left" href="#">
-                 <%= image_tag(@user.profile_image.url(:thumb), width: '100', border: '0', class: 'media-object dp img-circle img-responsive') if !@user.profile_image.nil? %>
-            </a>
-            <div class="media-body">
-                <h2 class="media-heading"><%= @user.current_rank %></h2>
-                <h5><%= @user.username %></h5>
-                <hr style="margin:8px auto">
+      <div class="media">
+        <a class="pull-left" href="#">
+          <%= image_tag(@user.profile_image.url(:thumb), width: '100', border: '0', class: 'media-object dp img-circle img-responsive') if !@user.profile_image.nil? %>
+        </a>
 
-                       <span><strong></strong></span>
-                      <% @user.sport_list.each do |item| %>
-                     <span class="label label-default"><%= item %></span>
-                    <% end %>
-                   <span><strong></strong></span>
-                  <% @user.favorite_team_list.each do |item| %>
-                 <span class="label label-default"><%= item %></span>
+        <div class="media-body">
+          <h2 class="media-heading"><%= @user.current_rank %></h2>
+          <h5><%= @user.username %></h5>
+          <hr style="margin:8px auto">
 
-
-
-                 <% end %>
-                 <h5 class"text-center"> <%= @user.bio %> </h5>
-
-                  
-
-                </div>
-              </div>
-            </div>
-           </div>
-
-
-
-
-
-<div class="container2">
-  <% if flash[:error] %>
-    <div class="alert alert-danger" role="alert">
-      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-      <span class="sr-only">Error:</span>
-      <%= flash[:error] %>
-    </div>
-  <% end %>
-  <% if flash[:notice] %>
-    <div class="alert alert-success" role="alert">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
-  <% if flash[:alert] %>
-    <div class="alert alert-warning" role="alert">
-      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-      <span class="sr-only">Attention:</span>
-      <%= flash[:alert] %>
-    </div>
-  <% end %>
-
-      
- 
-  <div class="row">
-   <div class="col-md-12">
-    <div class="col-xs-12 col-md-5">
-      <div class="box">
-       <div class="panel panel-heading">
-        <h4>Tonight's Lineups</h4>
-         <label class="amount">
-                <span><%= number_to_currency(@user.price.round(2)) %></span></br>
-              </label>
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="12 hours of full access."
-                    name="Fanalyst"
-                    data-image="http://i.imgur.com/HPl8vld.png"
-                    data-amount="<%= (@user.price.round(2)*100).to_i %>"></script>
-
-                
-             
-            </div>        
-
-        <img src="http://i.imgur.com/hly7cdk.png" alt="Daily Fantasy Lineups" style="width:350px;height:460px">
-
-        <% if !user_signed_in? %>
-         <div class="box">
-           <h5 class"text-center">Pay to view lineups</h5>
-         </div>  
-        <% elsif @teams %>
-          <ul>
-            <% @teams.each do |team| -%>
-              <li>
-                <%= image_tag team.image(:thumb)%><br>
-                <%= team.notes %>
-              </li>
-            <% end %>
-          </ul>
-        <% else %>
-          <%= form_tag charges_path do %>
-            <%= hidden_field_tag :subcription_user_id, @user.id %>
-            <%= hidden_field_tag :price, @user.price %>
-
-         
+          <span><strong></strong></span>
+          <% @user.sport_list.each do |item| %>
+            <span class="label label-default"><%= item %></span>
           <% end %>
+          <span><strong></strong></span>
+          <% @user.favorite_team_list.each do |item| %>
+            <span class="label label-default"><%= item %></span>
 
-        <% end %>
-       
+
+          <% end %>
+          <h5 class"text-center"> <%= @user.bio %> </h5>
+
+
         </div>
       </div>
-   
-  
-    <div class="col-xs-12 col-md-7 col-sm-6">
-     
-      <div class="box">
-        <h4 class="text-center">Previous Lineups</h4>
-        <p>Avg. Score:<%= @user.avarage_score.round(1) %></p>
-         
-      
-        <% @results.each do |result| -%>
-
-      
-          <%= result.score.round(1) %><br>
-          <%= image_tag result.image %><br>
-          <%= result.notes %>
-
-       
-     
-        <% end %>
-     
     </div>
   </div>
-</div>
-</div>
+
+
+  <div class="container2">
+    <% if flash[:error] %>
+      <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+    <% if flash[:notice] %>
+      <div class="alert alert-success" role="alert">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-warning" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Attention:</span>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-xs-12 col-md-5">
+          <div class="box">
+            <div class="panel panel-heading">
+              <h4>Tonight's Lineups</h4>
+              <label class="amount">
+                <span><%= number_to_currency(@user.price.round(2)) %></span></br>
+              </label>
+
+              <% if !user_signed_in? %>
+                <%= render 'stripe_button' %>
+              <% end %>
+
+            </div>
+
+            <img src="http://i.imgur.com/hly7cdk.png" alt="Daily Fantasy Lineups" style="width:350px;height:460px">
+
+            <% if !user_signed_in? %>
+              <div class="box">
+                <h5 class"text-center">Pay to view lineups</h5>
+              </div>
+            <% elsif @teams %>
+              <ul>
+                <% @teams.each do |team| -%>
+                  <li>
+                    <%= image_tag team.image(:thumb) %><br>
+                    <%= team.notes %>
+                  </li>
+                <% end %>
+              </ul>
+
+
+            <% end %>
+
+          </div>
+        </div>
+
+
+        <div class="col-xs-12 col-md-7 col-sm-6">
+
+          <div class="box">
+            <h4 class="text-center">Previous Lineups</h4>
+
+            <p>Avg. Score:<%= @user.avarage_score.round(1) %></p>
+
+
+            <% @results.each do |result| -%>
+
+
+              <%= result.score.round(1) %><br>
+              <%= image_tag result.image %><br>
+              <%= result.notes %>
+
+
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
 

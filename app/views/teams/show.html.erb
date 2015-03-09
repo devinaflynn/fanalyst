@@ -1,31 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Team</h4>
 
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4>Team</h4>
+      <%= image_tag @team.image.url %>
 
-        <%= image_tag @team.image.url %>
-
-        <div class="alert alert-default " >
-          <strong>Notes:</strong>
-          <%= simple_format(@team.notes) %>
-        </div>
-
-        <% if @team.result && @team.result.image.exists? %>
-        <%= image_tag @team.result.image.url %>
-
-        <div class="alert alert-default " >
-          <strong>Notes:</strong>
-          <%= simple_format(@team.result.notes) %>
-          <strong>Score:</strong>
-          <%= @team.result.score %>
-        </div>
-        <% end %>
-
-        <%= link_to 'Edit', edit_team_path(@team), class: "btn btn-success" %> |
-        <%= link_to 'Back', teams_path, class: "btn btn-primary" %>
+      <div class="alert alert-default " >
+        <strong>Notes:</strong>
+        <%= simple_format(@team.notes) %>
       </div>
+
+      <% if @team.result && @team.result.image.exists? %>
+      <%= image_tag @team.result.image.url %>
+
+      <div class="alert alert-default " >
+        <strong>Notes:</strong>
+        <%= simple_format(@team.result.notes) %>
+        <strong>Score:</strong>
+        <%= @team.result.score %>
+      </div>
+      <% end %>
+
+      <%= link_to 'Edit', edit_team_path(@team), class: "btn btn-success" %> |
+      <%= link_to 'Back', teams_path, class: "btn btn-primary" %>
     </div>
   </div>
+</div>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<%=link_to '#', id: 'customButton' do
+  image_tag 'stripe_button.png'
+end %>
 
