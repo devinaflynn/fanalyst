@@ -10,7 +10,7 @@
   <script>
     var handler = StripeCheckout.configure({
       key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-      image: '/img/documentation/checkout/marketplace.png',
+      image: 'http://i.imgur.com/HPl8vld.png',
       token: function(token) {
         // Use the token to create the charge with a server-side script.
         // You can access the token ID with `token.id`
