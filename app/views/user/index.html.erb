@@ -67,8 +67,11 @@
                 <span><%= number_to_currency(@user.price.round(2)) %></span></br>
               </label>
 
-              <% if !user_signed_in? %>
+              <% if user_signed_in? %>
                 <%= render 'stripe_button' %>
+              <% else %>
+                <p>You should <%= link_to 'Sign in', new_user_session_path %> or
+                <%= link_to 'Sign up', new_user_registration_path %> to see the user details.</p>
               <% end %>
 
             </div>
