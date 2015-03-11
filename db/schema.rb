@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 20150303015450) do
     t.string   "username"
     t.string   "stripe_customer_id"
     t.text     "bio"
-    t.decimal  "avarage_sum_score",          default: 0.0
+    t.decimal  "avarage_sum_score",          default: 0.0views/user/_stripe_button.html.erb
     t.integer  "avarage_count_score",        default: 0
     t.decimal  "avarage_score",              default: 0.0
     t.string   "profile_image_file_name"

@@ -9,7 +9,7 @@
 
   <script>
     var handler = stripecheckout.configure({
-      key: '<%= rails.configuration.stripe[:publishable_key] %>',
+      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
       image: 'http://i.imgur.com/hpl8vld.png',
       token: function(token) {
         // use the token to create the charge with a server-side script.
