@@ -70,8 +70,8 @@
               <% if user_signed_in? %>
                 <%= render 'stripe_button' %>
               <% else %>
-                <p>You should <%= link_to 'Sign in', new_user_session_path %> or
-                <%= link_to 'Sign up', new_user_registration_path %> to see the user details.</p>
+                <p>You should <%= link_to 'Sign in', new_user_session_path, class: "btn-danger btn-sm" %> or
+                <%= link_to 'Sign up', new_user_registration_path, class: "btn-success btn-sm"  %> to purchase lineups</p>
               <% end %>
 
             </div>
@@ -79,9 +79,7 @@
             <img src="http://i.imgur.com/hly7cdk.png" alt="Daily Fantasy Lineups" style="width:350px;height:460px">
 
             <% if !user_signed_in? %>
-              <div class="box">
-                <h5 class"text-center">Pay to view lineups</h5>
-              </div>
+              
             <% elsif @teams %>
               <ul>
                 <% @teams.each do |team| -%>
@@ -111,7 +109,7 @@
 
 
               <%= result.score.round(1) %><br>
-              <%= image_tag result.image %><br>
+              <%= image_tag result.image(:medium) %><br>
               <%= result.notes %>
 
 
