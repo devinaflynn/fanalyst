@@ -1,4 +1,3 @@
-
 <%= form_tag charges_path, id: 'stripeForm' do %>
   <%= hidden_field_tag :subcription_user_id, @user.id %>
   <%= hidden_field_tag :price, @user.price %>
@@ -8,32 +7,29 @@
   <script src="https://checkout.stripe.com/checkout.js"></script>
 
   <script>
-    var handler = stripecheckout.configure({
+    var handler = StripeCheckout.configure({
       key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-      image: 'http://i.imgur.com/hpl8vld.png',
+      image: 'http://i.imgur.com/HPl8vld.png',
       token: function(token) {
-        // use the token to create the charge with a server-side script.
-        // you can access the token id with `token.id`
-        $('#stripetoken').val(token.id);
-        $('#stripeform').submit();
+        // Use the token to create the charge with a server-side script.
+        // You can access the token ID with `token.id`
+        $('#stripeToken').val(token.id);
+        $('#stripeForm').submit();
       }
     });
-
-    $('#custombutton').on('click', function(e) {
-      // open checkout with further options
+    $('#customButton').on('click', function(e) {
+      // Open Checkout with further options
       handler.open({
-        name: 'fanalyst',
+        name: 'Fanalyst',
         description: '12 hours of full access.',
         amount: <%= (@user.price.round(2)*100).to_i %>
       });
-      e.preventdefault();
+      e.preventDefault();
     });
-
-    // close checkout on page navigation
+    // Close Checkout on page navigation
     $(window).on('popstate', function() {
       handler.close();
     });
   </script>
 
 <% end %>
-
