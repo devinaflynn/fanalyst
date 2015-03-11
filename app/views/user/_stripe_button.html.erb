@@ -8,28 +8,28 @@
   <script src="https://checkout.stripe.com/checkout.js"></script>
 
   <script>
-    var handler = StripeCheckout.configure({
-      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-      image: 'http://i.imgur.com/HPl8vld.png',
+    var handler = stripecheckout.configure({
+      key: '<%= rails.configuration.stripe[:publishable_key] %>',
+      image: 'http://i.imgur.com/hpl8vld.png',
       token: function(token) {
-        // Use the token to create the charge with a server-side script.
-        // You can access the token ID with `token.id`
-        $('#stripeToken').val(token.id);
-        $('#stripeForm').submit();
+        // use the token to create the charge with a server-side script.
+        // you can access the token id with `token.id`
+        $('#stripetoken').val(token.id);
+        $('#stripeform').submit();
       }
     });
 
-    $('#customButton').on('click', function(e) {
-      // Open Checkout with further options
+    $('#custombutton').on('click', function(e) {
+      // open checkout with further options
       handler.open({
-        name: 'Fanalyst',
+        name: 'fanalyst',
         description: '12 hours of full access.',
         amount: <%= (@user.price.round(2)*100).to_i %>
       });
-      e.preventDefault();
+      e.preventdefault();
     });
 
-    // Close Checkout on page navigation
+    // close checkout on page navigation
     $(window).on('popstate', function() {
       handler.close();
     });
