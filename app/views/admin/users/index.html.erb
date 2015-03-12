@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-xs-12">
+    <%= simple_form_for @user, url: admin_users_path, method: :get, html: { class: 'form-inline' } do |f| %>
+      <%= f.input :username %>
+      <%= f.input :email %>
+      <%= f.input :price, as: :string %>
+      <%= f.button :submit, 'Search' %>
+    <% end %>
+  </div>
+</div>
+<div class="row"  style="padding-top: 20px;">
+  <div class="col-xs-12">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Username</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.username %></td>
+          <td><%= user.price %></td>
+          <th><%= link_to 'edit', edit_admin_user_path(user) %></th>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
