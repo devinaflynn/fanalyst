@@ -32,10 +32,9 @@
   <th></th>
   <th>Username</th>
   <th>Average Score</th>
+  <th>Nr. Linups submitted</th>
   <th></th>
   </tr>
-  
-   
     <% @users.each_with_index do |user, index| -%>
       <tr>
         <td><h2><%= index + 1 %></h2></td>
@@ -46,6 +45,7 @@
         </td>
         <td><%= user.username %></td>
         <td><%= user.avarage_score.round(1) %></td>
+        <td><%= user.teams.joins(:result).count %></td>
         <td><%= link_to 'View Profile', user_detail_path(user), class: "btn btn-danger" %></td>
       </tr>
     <% end -%>
