@@ -62,3 +62,4 @@ gem 'figaro', group: [:development, :test]
 # tags
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'bootstrap-tagsinput-rails'
+gem 'simple_form'
