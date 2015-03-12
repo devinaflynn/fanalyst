@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fanalyst | Daily Fantasy Experts</title>
+  <meta content="Learn from and follow the best daily fantasy players" name="description" />
+  <meta content="daily fantasy lineups, fantasy sports, best fantasy players" name="keywords" />
+  <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'frontend/favicon.png' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Fanalyst Admin</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><%= link_to 'users', admin_users_path %></li>            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Logout</a></li>
+            <li class="active"><a href="#">Logout <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+  <div class="container">
+    <div class class="row">
+      <%= render 'admin/shared/messages' %>
+    </div>
+    <%= yield %>
+
+  </div>
+</body>
+</html>
