@@ -5,6 +5,8 @@
 <div class="row">
   <div class="jumbtron">
     <div class="col-lg-5 col-md-6 col-md-offset-3">
+      <%= link_to 'Back to Leaderboard', leaderboard_path, class: 'btn btn-primary' %>
+
       <div class="media">
         <a class="pull-left" href="#">
           <%= image_tag(@user.profile_image.url(:thumb), width: '100', border: '0', class: 'media-object dp img-circle img-responsive') if !@user.profile_image.nil? %>
@@ -35,28 +37,6 @@
       </div>
     </div>
   </div>
-
-
-  <div class="container2">
-    <% if flash[:error] %>
-      <div class="alert alert-danger" role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-        <span class="sr-only">Error:</span>
-        <%= flash[:error] %>
-      </div>
-    <% end %>
-    <% if flash[:notice] %>
-      <div class="alert alert-success" role="alert">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="alert alert-warning" role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-        <span class="sr-only">Attention:</span>
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
 
 
 
