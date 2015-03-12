@@ -37,29 +37,6 @@
   </div>
 
 
-  <div class="container2">
-    <% if flash[:error] %>
-      <div class="alert alert-danger" role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-        <span class="sr-only">Error:</span>
-        <%= flash[:error] %>
-      </div>
-    <% end %>
-    <% if flash[:notice] %>
-      <div class="alert alert-success" role="alert">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="alert alert-warning" role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-        <span class="sr-only">Attention:</span>
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
-
-
-
     <div class="row">
       <div class="col-md-12">
         <div class="col-xs-12 col-md-5">
