@@ -27,7 +27,7 @@
           <% end %>
           <h5 class"text-center"> <%= @user.bio %> </h5>
           <h6>
-            Nr. of teams: <%= current_user.teams.joins(:result).count %>
+            Nr. of teams: <%= @user.teams.joins(:result).count %>
           </h6>
 
 
