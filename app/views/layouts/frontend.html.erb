@@ -56,10 +56,12 @@
             <span class="icon-bar"></span>
           </button>
           <h1><a class="navbar-brand scroll" href="#intro">Fanalyst</a></h1>
+
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav pull-right">
             <li><a href="#about">How it works</a></li>
+            <li><%= link_to 'Leaderboard', leaderboard_path, class: 'hidden-sm login' %></li>
             <li><%= link_to 'Login', new_user_session_path, class: 'hidden-sm login' %></li>
             <li><%= link_to 'Sign up', new_user_registration_path, class: 'signup' %></li>
           </ul>
