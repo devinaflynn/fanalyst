@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'player_news_nba' => 'leaderboard#player_news_nba'
   get 'jobs' => 'leaderboard#jobs'
   get 'pricing' => 'leaderboard#pricing'
+   get 'faq' => 'leaderboard#faq'
   get 'leaderboard' => 'leaderboard#index'
   get 'leaderboard/profile/:id' => 'leaderboard#profile', as: 'leaderboard_profile'
   get 'nfl_leaderboard' => 'leaderboard#nfl_leaderboard'

@@ -26,3 +26,7 @@ end
 def player_news_nba
 
 end  
+
+def faq
+
+end  
