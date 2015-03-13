@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 
 
     <div class="row">
@@ -63,10 +63,10 @@
             <% elsif @teams %>
               <ul>
                 <% @teams.each do |team| -%>
-                  <li>
-                    <%= image_tag team.image(:thumb) %><br>
+                  
+                    <%= image_tag team.image(:medium) %><br>
                     <%= team.notes %>
-                  </li>
+                  
                 <% end %>
               </ul>
 
