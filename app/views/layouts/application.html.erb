@@ -11,7 +11,8 @@
   <%= csrf_meta_tags %>
  
 </head>
-<body>
+
+<body <%= 'data-no-turbolink' if (controller_name == 'user' && action_name == 'index') %>>
   <div class="container">
     <%= render 'shared/header' %>
 
