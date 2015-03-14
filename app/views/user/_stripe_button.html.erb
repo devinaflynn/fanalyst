@@ -1,10 +1,12 @@
+<% content_for :js do %>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+<% end %>
+
 <%= form_tag charges_path, id: 'stripeForm' do %>
   <%= hidden_field_tag :subcription_user_id, @user.id %>
   <%= hidden_field_tag :price, @user.price %>
   <%= hidden_field_tag :stripeToken, id: 'stripeToken' %>
   <%= link_to 'View lineups for today', '#', id: 'customButton', class: 'btn btn-success' %>
-
-  <script src="https://checkout.stripe.com/checkout.js"></script>
 
   <script>
     var handler = StripeCheckout.configure({

@@ -29,8 +29,6 @@
           <h6>
             Nr. of teams: <%= @user.teams.joins(:result).count %>
           </h6>
-
-
         </div>
       </div>
     </div>
@@ -66,7 +64,7 @@
                   
                     <%= image_tag team.image(:medium) %><br>
                     <%= team.notes %>
-                  
+                 
                 <% end %>
               </ul>
 
