@@ -46,7 +46,7 @@
         <td><%= user.username %></td>
         <td><%= user.avarage_score.round(1) %></td>
         <td><%= user.teams.joins(:result).count %></td>
-        <td><%= link_to 'View Profile', user_detail_path(user), class: "btn btn-danger" %></td>
+        <td><%= link_to 'View Profile', user_detail_path(user), class: "btn btn-danger", data: { no_turbolink: true } %></td>
       </tr>
     <% end -%>
     </tbody>
