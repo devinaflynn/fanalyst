@@ -3,7 +3,7 @@ class UserController < ApplicationController
     @user = User.find(params[:id])
     @teams = nil
     if current_user && current_user.allowed?(@user)
-      @teams = @user.teams
+      @teams = @user.teams.where('created_at >= ?', Time.zone.now - 1.day)
     end
     @results = Result.joins(:team).where('teams.user_id = ?', @user.id).order(created_at: :desc)
   end

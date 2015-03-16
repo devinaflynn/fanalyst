@@ -51,11 +51,8 @@
 
             </div>
 
-            <img src="http://i.imgur.com/hly7cdk.png" alt="Daily Fantasy Lineups" style="width:350px;height:460px">
-
             <% if !user_signed_in? %>
-              
-            <% elsif @teams %>
+              <% if @teams %>
               <ul>
                 <% @teams.each do |team| -%>
                   
@@ -64,8 +61,11 @@
                  
                 <% end %>
               </ul>
-
-
+              <% else %>
+                <img src="http://i.imgur.com/hly7cdk.png" alt="Daily Fantasy Lineups" style="width:350px;height:460px">
+              <% end %>
+            <% else %>
+              <img src="http://i.imgur.com/hly7cdk.png" alt="Daily Fantasy Lineups" style="width:350px;height:460px">
             <% end %>
 
           </div>
