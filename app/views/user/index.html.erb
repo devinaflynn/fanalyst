@@ -51,18 +51,16 @@
 
             </div>
 
-            <% if !user_signed_in? %>
-              <% if @teams %>
-              <ul>
-                <% @teams.each do |team| -%>
-                  
+            <% if user_signed_in? %>
+              <% if @teams.nil? %>
+                 <img src="http://i.imgur.com/hly7cdk.png" alt="Daily Fantasy Lineups" style="width:350px;height:460px">
+              <% else %>
+                <ul>
+                  <% @teams.each do |team| -%>    
                     <%= image_tag team.image(:medium) %><br>
                     <%= team.notes %>
-                 
-                <% end %>
-              </ul>
-              <% else %>
-                <img src="http://i.imgur.com/hly7cdk.png" alt="Daily Fantasy Lineups" style="width:350px;height:460px">
+                  <% end %>
+                </ul>
               <% end %>
             <% else %>
               <img src="http://i.imgur.com/hly7cdk.png" alt="Daily Fantasy Lineups" style="width:350px;height:460px">

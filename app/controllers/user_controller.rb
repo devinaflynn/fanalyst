@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   def index
     @user = User.find(params[:id])
+
     @teams = nil
     if current_user && current_user.allowed?(@user)
       @teams = @user.teams.where('created_at >= ?', Time.zone.now - 1.day)
