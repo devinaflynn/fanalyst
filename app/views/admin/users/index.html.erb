@@ -16,7 +16,9 @@
           <th>Email</th>
           <th>Username</th>
           <th>Price</th>
-          <th></th>
+          <th>Avarage Score</th>
+          <th>Result Count</th>
+          <th>Team Count</th>
         </tr>
       </thead>
 
@@ -26,6 +28,10 @@
           <td><%= user.email %></td>
           <td><%= user.username %></td>
           <td><%= user.price %></td>
+          <td><%= user.avarage_score %></td>
+          <td><%= user.teams.joins(:result).count %></td>
+          <td><%= user.teams.count %></td>
+
           <th><%= link_to 'edit', edit_admin_user_path(user) %></th>
         </tr>
         <% end %>
