@@ -9,29 +9,37 @@
   <%= link_to 'View lineups for today', '#', id: 'customButton', class: 'btn btn-success' %>
 
   <script>
-    var handler = StripeCheckout.configure({
-      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-      image: 'http://i.imgur.com/HPl8vld.png',
-      token: function(token) {
-        // Use the token to create the charge with a server-side script.
-        // You can access the token ID with `token.id`
-        $('#stripeToken').val(token.id);
-        $('#stripeForm').submit();
-      }
-    });
-    $('#customButton').on('click', function(e) {
-      // Open Checkout with further options
-      handler.open({
-        name: 'Fanalyst',
-        description: '12 hours of full access.',
-        amount: <%= (@user.price.round(2)*100).to_i %>
+    ready = function(){
+      var handler = StripeCheckout.configure({
+        key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+        image: 'https://i.imgur.com/HPl8vld.png',
+        token: function(token) {
+          // Use the token to create the charge with a server-side script.
+          // You can access the token ID with `token.id`
+          $('#stripeToken').val(token.id);
+          $('#stripeForm').submit();
+        }
       });
-      e.preventDefault();
-    });
-    // Close Checkout on page navigation
-    $(window).on('popstate', function() {
-      handler.close();
-    });
+
+      $('#customButton').on('click', function(e) {
+        // Open Checkout with further options
+        handler.open({
+          name: 'Fanalyst',
+          description: '12 hours of full access.',
+          amount: <%= (@user.price.round(2)*100).to_i %>
+        });
+        e.preventDefault();
+      });
+      
+      // Close Checkout on page navigation
+      $(window).on('popstate', function() {
+        handler.close();
+      });
+
+    }
+
+    $(document).ready(ready);
+    // $(document).on('page:load', ready)
   </script>
 
 <% end %>
