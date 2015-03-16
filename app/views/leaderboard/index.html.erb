@@ -21,6 +21,7 @@
    <%= link_to 'March Madness', march_madness_leaderboard_path, class: "btn btn-primary" %>
    <%= link_to 'NHL', nhl_leaderboard_path, class: "btn btn-primary" %>
  </p>
+ <h4>Fan Duel Median Score: <%= ConstantValue.first.fan_duel_median_score %></h4>
 
 </div>
 
@@ -34,6 +35,7 @@
   <th></th>
   <th>Username</th>
   <th>Average Score</th>
+  <th>+ / -</th>
   <th>Total Lineups Submitted</th>
   <th></th>
   </tr>
@@ -47,6 +49,7 @@
         </td>
         <td><%= user.username %></td>
         <td><%= user.avarage_score.round(1) %></td>
+        <td><%= user.avarage_score.round(1) - ConstantValue.first.fan_duel_median_score.round(2)  %></td>
         <td><%= user.teams.joins(:result).count %></td>
         <td><%= link_to 'View Profile', user_detail_path(user), class: "btn btn-danger", data: { no_turbolink: true } %></td>
       </tr>

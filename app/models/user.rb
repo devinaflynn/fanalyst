@@ -44,4 +44,10 @@ class User < ActiveRecord::Base
     @users = User.order(avarage_score: :desc)
     @users.map(&:id).index(self.id) + 1
   end
+
+  def self.users_avarage_score
+    result_nr = Result.count
+    score = Result.sum("score")
+    (score / result_nr).round(2)
+  end
 end

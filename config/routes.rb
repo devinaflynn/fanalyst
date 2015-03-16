@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
+    resources :constant_values, only: [:edit, :update]
   end
 
 
