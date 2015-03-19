@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins, only: [:sessions, :passwords]
   devise_for :users, controllers: { :registrations => :registrations }
   resources :teams do
     resource :result
