@@ -41,7 +41,11 @@ class ApplicationController < ActionController::Base
   end
 
   def layout_by_resource
-    if devise_controller? && resource_name == :admin
+    if controller_name == 'leaderboard'
+      'application'
+    elsif controller_name == 'user' && action_name=='index'
+      'application'
+    elsif devise_controller? && resource_name == :admin
       "admin"
     elsif devise_controller? && resource_name == :user
       "application"
