@@ -1,19 +1,23 @@
 Rails.application.routes.draw do
+  devise_for :customers, only: [:sessions, :passwords]
+  devise_for :admins, only: [:sessions, :passwords]
   devise_for :users, controllers: { :registrations => :registrations }
+
   resources :teams do
     resource :result
   end
   resources :charges
 
+  namespace :customers do
+    get 'my_teams' => 'my_teams#index'
+  end
+
   get 'user/:id' => 'user#index', as: 'user_detail'
-
-
   get 'home' => 'pages#home'
-
   get 'player_news_nba' => 'leaderboard#player_news_nba'
   get 'jobs' => 'leaderboard#jobs'
   get 'pricing' => 'leaderboard#pricing'
-   get 'faq' => 'leaderboard#faq'
+  get 'faq' => 'leaderboard#faq'
   get 'leaderboard' => 'leaderboard#index'
   get 'leaderboard/profile/:id' => 'leaderboard#profile', as: 'leaderboard_profile'
   get 'nfl_leaderboard' => 'leaderboard#nfl_leaderboard'
@@ -29,7 +33,6 @@ Rails.application.routes.draw do
     resources :users
     resources :constant_values, only: [:edit, :update]
   end
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

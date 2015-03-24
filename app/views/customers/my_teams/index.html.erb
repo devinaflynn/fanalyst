@@ -1,0 +1,12 @@
+<h1>My teams</h1>
+
+<table class="table">
+  <tbody>
+  <% @payments.each do |payment| %>
+  <tr>
+    <td><%= link_to payment.allowed_user.email, user_detail_path(payment.allowed_user) %></td>
+    <td><%= state(payment) %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

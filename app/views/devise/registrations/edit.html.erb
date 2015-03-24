@@ -1,85 +1,69 @@
-<%= render '/shared/header' %>
+<div class="box">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
 
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
 
-  <div class="box">
-       <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+        <% if resource.persisted? -%>
+          <div class="form-group">
+            <%= image_tag resource.profile_image.url, width: '100' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :profile_image %>
+            <%= f.file_field :profile_image, class: "form-control" %>
+          </div>
+        <% end %>
 
+        <div class="form-group">
+          <%= f.label :bio %><br />
+          <%= f.text_area :bio, :placeholder => "Tell us a little about yourself...", class: "form-control", autofocus: true, rows: 10 %>
+        </div>
 
+        <div class="form-group">
+          <%= f.label :dfs_platform %><br />
+          <%= f.text_field :sport_list, :placeholder => "Fan Duel, Draft Kings, Victiv", class: "form-control", value: f.object.sport_list.to_s, autofocus: true  %>
+        </div>
 
-
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <% if resource.persisted? -%>
-  <div class="form-group">
-    <%= image_tag resource.profile_image.url, width: '100' %>
-</div>
-<div class="form-group">
-    <%= f.label :profile_image %>
-    <%= f.file_field :profile_image, class: "form-control" %>
-  </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio, :placeholder => "Tell us a little about yourself...", class: "form-control", autofocus: true, rows: 10 %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :dfs_platform %><br />
-    <%= f.text_field :sport_list, :placeholder => "Fan Duel, Draft Kings, Victiv", class: "form-control", value: f.object.sport_list.to_s, autofocus: true  %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :favorite_teams %><br />
-    <%= f.text_field :favorite_team_list, :placeholder => "Atlanta Hawks, Boston Bruins, etc", class: "form-control", style: "width:200px;", value: f.object.favorite_team_list.to_s, autofocus: true %>
-  </div>
-
-
+        <div class="form-group">
+          <%= f.label :favorite_teams %><br />
+          <%= f.text_field :favorite_team_list, :placeholder => "Atlanta Hawks, Boston Bruins, etc", class: "form-control", style: "width:200px;", value: f.object.favorite_team_list.to_s, autofocus: true %>
+        </div>
   
-  <script>
-    $('#user_sport_list').tagsinput();
-    $('#user_favorite_team_list').tagsinput();
-  </script>
+        <script>
+          $('#user_sport_list').tagsinput();
+          $('#user_favorite_team_list').tagsinput();
+        </script>
 
-  <div class="actions">
-    <%= f.submit "Save Changes", class: "btn-block btn-success btn-lg" %>
+        <div class="actions">
+          <%= f.submit "Save Changes", class: "btn-block btn-success btn-lg" %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, class: "form-control", autofocus: true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+        </div>  
+      <% end %>
+
+      <h3>Cancel my account</h3>
+
+      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+      <%= link_to "Back", :back %>
+    </div>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, class: "form-control", autofocus: true %>
-  </div>
-  
-
-
-
-  <div class="form-group">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
-  </div>
-
-  
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-
-</div>
-</div>
 </div>
