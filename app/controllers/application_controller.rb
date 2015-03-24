@@ -14,15 +14,16 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :bio
     devise_parameter_sanitizer.for(:account_update) << :sport_list
     devise_parameter_sanitizer.for(:account_update) << :favorite_team_list
-     devise_parameter_sanitizer.for(:sign_up) << :username
-   devise_parameter_sanitizer.for(:account_update) << :username
+    devise_parameter_sanitizer.for(:sign_up) << :username
+    devise_parameter_sanitizer.for(:account_update) << :username
   end
 
   def after_sign_out_path_for(resource_or_scope)
-    case resource_or_scope
-    when :user, User
+    if resource_or_scope === :customer || resource_or_scope.kind_of?(Customer)
+      new_customer_session_path
+    elsif resource_or_scope === :user || resource_or_scope.kind_of?(User)
       root_path
-    when :admin, Admin
+    elsif resource_or_scope === :admin || resource_or_scope.kind_of?(Admin)
       new_admin_session_path
     else
       super
@@ -30,10 +31,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource_or_scope)
-    case resource_or_scope
-    when :user, User
+    if resource_or_scope === :customer || resource_or_scope.kind_of?(Customer)
+      customers_my_teams_path
+    elsif resource_or_scope === :user || resource_or_scope.kind_of?(User)
       leaderboard_path
-    when :admin, Admin
+    elsif resource_or_scope === :admin || resource_or_scope.kind_of?(Admin)
       admin_users_path
     else
       super
@@ -48,6 +50,8 @@ class ApplicationController < ActionController::Base
     elsif devise_controller? && resource_name == :admin
       "admin"
     elsif devise_controller? && resource_name == :user
+      "application"
+    elsif devise_controller? && resource_name == :customer
       "application"
     else
       "frontend"

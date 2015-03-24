@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :teams
-  has_many :payments
 
   has_attached_file :profile_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, default_url: 'http://i.imgur.com/1yd9LaF.png'
   validates_attachment_content_type :profile_image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
@@ -16,13 +15,6 @@ class User < ActiveRecord::Base
   attr_accessor :sport_tags
   attr_accessor :favorite_team_tags
 
-
-
-  # returns true if the current user payed to have access to the user profile
-  def allowed?(user)
-    count = payments.where(allowed_user_id: user.id).where('expires_at > ?', Time.zone.now).count
-    count > 0
-  end
 
   # Overrides the devise update_with_password method that requires a current_password.
   #

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319123934) do
+ActiveRecord::Schema.define(version: 20150320190205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,13 +35,32 @@ ActiveRecord::Schema.define(version: 20150319123934) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "constant_values", force: :cascade do |t|
-    t.decimal  "fan_duel_median_score"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.decimal  "fan_duel_median_score", default: 0.0
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
+  create_table "customers", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "stripe_customer_id"
+  end
+
+  add_index "customers", ["email"], name: "index_customers_on_email", unique: true, using: :btree
+  add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
+
   create_table "payments", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "customer_id"
     t.integer  "allowed_user_id"
     t.decimal  "value"
     t.datetime "expires_at"
@@ -50,7 +69,7 @@ ActiveRecord::Schema.define(version: 20150319123934) do
   end
 
   add_index "payments", ["allowed_user_id"], name: "index_payments_on_allowed_user_id", using: :btree
-  add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
+  add_index "payments", ["customer_id"], name: "index_payments_on_customer_id", using: :btree
 
   create_table "results", force: :cascade do |t|
     t.text     "notes"
@@ -103,7 +122,6 @@ ActiveRecord::Schema.define(version: 20150319123934) do
   create_table "users", force: :cascade do |t|
     t.decimal  "price",                      default: 0.0
     t.string   "username"
-    t.string   "stripe_customer_id"
     t.text     "bio"
     t.decimal  "avarage_sum_score",          default: 0.0
     t.integer  "avarage_count_score",        default: 0

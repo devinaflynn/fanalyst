@@ -5,7 +5,8 @@
 <%= form_tag charges_path, id: 'stripeForm' do %>
   <%= hidden_field_tag :subcription_user_id, @user.id %>
   <%= hidden_field_tag :price, @user.price %>
-  <%= hidden_field_tag :stripeToken, id: 'stripeToken' %>
+  <%= hidden_field_tag :stripeToken, '', id: 'stripeToken' %>
+  <%= hidden_field_tag :email, '', id: 'stripeEmail' %>
   <%= link_to 'View lineups for today', '#', id: 'customButton', class: 'btn btn-success' %>
 
   <script>
@@ -17,6 +18,7 @@
           // Use the token to create the charge with a server-side script.
           // You can access the token ID with `token.id`
           $('#stripeToken').val(token.id);
+          $('#stripeEmail').val(token.email);
           $('#stripeForm').submit();
         }
       });

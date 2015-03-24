@@ -1,6 +1,4 @@
 class LeaderboardController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :pricing, :jobs, :profile, :nfl_leaderboard, :mlb_leaderboard, :nhl_leaderboard, :march_madness_leaderboard, :soccer_leaderboard, :faq]
-
   def index
     @users = User.order(avarage_score: :desc)
   end
