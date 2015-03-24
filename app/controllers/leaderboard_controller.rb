@@ -30,3 +30,7 @@ end
 def faq
 
 end  
+
+def strategy
+
+end  

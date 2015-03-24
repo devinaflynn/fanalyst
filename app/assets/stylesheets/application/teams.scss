@@ -34,16 +34,47 @@ table {
 }
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-   background-color:      #fff;
+   background-color:      #efefef;
 }
 
 .jumbotron {
   
-  width:100%;
+  width:100% !important;
   background-color: #e6e6e6 !important;
-  color: #000 !important;
+  color: #fff !important;
   margin-top: 30px !important;
+  background-image: url("http://i.imgur.com/x6IUvDW.png") !important;
+  background-size:100%;
+
 }
+
+.jumbotron2 {
+  
+  width:100% !important;
+  background-color: #e6e6e6 !important;
+  color: #fff !important;
+  margin-top: 50px !important;
+  background-image: url("http://i.imgur.com/Bbnai0j.png") !important;
+  background-size:100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
+
+.jumbotron3 {
+  
+  width:100% !important;
+  background-color: #e6e6e6 !important;
+  color: #fff !important;
+  margin-top: 50px !important;
+  background-image: url("http://i.imgur.com/uEK7b0F.png") !important;
+  background-size:100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
+
+
 
 /*
 Code snippet by maridlcrmn for Bootsnipp.com
