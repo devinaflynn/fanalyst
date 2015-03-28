@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'march_madness_leaderboard' => 'leaderboard#march_madness_leaderboard'
   get 'nhl_leaderboard' => 'leaderboard#nhl_leaderboard'
   get 'strategy' => 'leaderboard#strategy'
+  get 'livehelp' => 'leaderboard#livehelp'
 
   root 'pages#home'
 
